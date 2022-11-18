@@ -11,11 +11,7 @@
 <script type="text/javascript">
 	
 $(function(){
-	$(document).on("click","#port",function(){
-		$("#selected").val("");
-		window.open("newOrderPortfolio.jsp","selectport","width=470, height=500");
-	})
-	
+	//주소
 	$(document).on("click","#addr",function(){
 		//$("#addrSelected").val("");
 		new daum.Postcode({
@@ -23,53 +19,51 @@ $(function(){
 	            $("#addrSelected").val(data.address);
 	        }
 	    }).open();
-	})		
+	})	
+	//포트폴리오 선택
+	$(document).on("click","#port",function(){
+		$("#cPortfolio").val("");
+		window.open("newOrderPortfolio.jsp","selectport","width=470, height=500");
+	})
 	
   
 	
 	
 });
 	
-	
-	
-	
-	
-
-	
-      
 </script>
 	
 	
-</style>
+
 
 </head>
 <body>
-	<form action="">
+
 		<h1>상담신청</h1>
-		회사명<input type="text">
-		연락처<input type="text"><br>
-		담당자<input type="text">
+		회사명<input type="text" id="cName">
+		연락처<input type="text" id="cPhone"><br>
+		담당자<input type="text" id="cManager">
 		E-mail<input type="text"><br>
 		<hr>
 		<button id="addr">주소검색</button><br>
 		주소: <input type="text" id="addrSelected">
 		<hr>
-		<button type="button"  value="1">쇼핑몰</button>
-		<button type="button"  value="2">홈페이지</button>
-		<button type="button"  value="3">네이티브 앱</button>
-		<button type="button"  value="4">서비스 개발</button>
-		<button type="button"  value="5">마케팅</button>
-		<button type="button"  value="6">유지보수</button>
-		<button type="button"  value="7">기타</button><br>
+		<button type="button" value="1">쇼핑몰</button>
+		<button type="button" value="2">홈페이지</button>
+		<button type="button" value="3">네이티브 앱</button>
+		<button type="button" value="4">서비스 개발</button>
+		<button type="button" value="5">마케팅</button>
+		<button type="button" value="6">유지보수</button>
+		<button type="button" value="7">기타</button><br>
 		
-		예상제작비용<input type="text"><br>
+		예상제작비용<input type="text" id="cPrice"><br>
 		
 		<button id="port">포트폴리오 선택</button><br>
-		선택된 포트폴리오: <input type="text" id="selected"><br>
+		선택된 포트폴리오: <input type="text" id="cPortfolio"><br>
 		
-		문의 내용<input type="text" style="width:300px;height:200px;"><br>
+		문의 내용<input type="text" id="cInfo" style="width:300px;height:200px;"><br>
 		
 		<input type="submit" value="등록">
-	</form>
+
 </body>
 </html>

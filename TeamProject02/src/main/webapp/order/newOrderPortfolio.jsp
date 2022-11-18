@@ -43,7 +43,7 @@
 		}
 		
 		function sendData(){
-            opener.document.getElementById("selected").value = document.getElementById("IMG").name
+            opener.document.getElementById("cPortfolio").value = document.getElementById("IMG").name
 		}
 		
 		$(document).on("click","#IMGlink",function(){
