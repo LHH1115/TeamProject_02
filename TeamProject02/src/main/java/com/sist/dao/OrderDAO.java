@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -13,7 +14,19 @@ import javax.sql.DataSource;
 import com.sist.vo.OrderVO;
 
 public class OrderDAO {
-	//신규문의
+	
+	private static OrderDAO dao;
+	public static OrderDAO getInstance() {
+		if(dao == null) {
+			dao = new OrderDAO();
+		}
+		return dao;
+	}
+	
+	private OrderDAO() {		
+	}	
+	
+	//신규문
 	public int insertNewOrder(OrderVO o) {
 		int re = -1;
 		
@@ -52,7 +65,6 @@ public class OrderDAO {
 		return re;
 	}
 	//기존문의
-	
 	
 	public OrderVO findRequest(int cNo) {
 		OrderVO o = new OrderVO();
