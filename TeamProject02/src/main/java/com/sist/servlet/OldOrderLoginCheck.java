@@ -32,7 +32,7 @@ public class OldOrderLoginCheck extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		OrderDAO dao = new OrderDAO();
+		OrderDAO dao = OrderDAO.getInstance();
 		int cNo = Integer.parseInt(request.getParameter("cNo"));
 		OrderVO o = dao.findRequest(cNo);
 		response.setContentType("text/plain;charset=utf-8");
