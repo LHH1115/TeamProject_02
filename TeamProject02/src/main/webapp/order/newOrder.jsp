@@ -50,7 +50,7 @@ $(function(){
 		<input type="radio" name="cService" value="6">유지보수
 		<input type="radio" name="cService" value="7">기타<br>
 		
-		예상제작비용<input type="text"><br>
+		예상제작비용 : <input type="text"><br>
 		
 		<button id="port">포트폴리오 선택</button><br>
 		선택된 포트폴리오: <input type="text" id="selected"><br>
