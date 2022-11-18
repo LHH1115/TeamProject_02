@@ -31,7 +31,7 @@ $(function(){
 </script>
 </head>
 <body>
-	<form  id="f">
+	<form id="f">
 		<h1>상담신청</h1>
 		회사명<input type="text">
 		연락처<input type="text"><br>

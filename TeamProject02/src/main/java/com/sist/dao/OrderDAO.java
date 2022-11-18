@@ -1,6 +1,7 @@
 package com.sist.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -26,54 +27,44 @@ public class OrderDAO {
 	}	
 	
 	//신규문
-	public int insertNewOrder() {
+	public int insertNewOrder(OrderVO o) {
 		int re = -1;
+		
+		String sql = "insert into "
+				+ "CustomerNew "
+				+ "(cNo,cName,cPhone,cAddr,cManager,cEmail,cService,cPrice,"
+				+ "cInfo,cPortfolio,cMeeting) "
+				+ "values(?,?,?,?,?,?,?,?,?,?,?);";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, o.getCNo());
+			pstmt.setString(2, o.getCName());
+			pstmt.setString(3, o.getCPhone());
+			pstmt.setString(4, o.getCAddr());
+			pstmt.setString(5, o.getCManager());
+			pstmt.setString(6, o.getCEmail());
+			pstmt.setInt(7, o.getCService());
+			pstmt.setInt(8, o.getCPrice());
+			pstmt.setString(9, o.getCInfo());
+			pstmt.setString(10, o.getCPortfolio());
+			
+						
+			re = pstmt.executeUpdate();			
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}finally {			
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}				
 		
 		return re;
 	}
 	//기존문의
-	
-	public ArrayList<OrderVO> findPortfolioPath() {
-		ArrayList<OrderVO> list = new ArrayList<OrderVO>();
-		String sql = "select b2.* from (select rownum n,b1.* from (select * from board ";
-		Connection conn = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		try {
-			Context context = new InitialContext();
-			DataSource ds  =(DataSource) context.lookup("java:/comp/env/mydb");
-			conn = ds.getConnection();
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sql);
-			while(rs.next()) {
-				OrderVO o = new OrderVO();
-				
-				list.add(o);
-			}
-		} catch (Exception e) {
-			System.out.println("Exception: "+e);
-		}finally {
-			if(rs!=null) {try {
-				rs.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}}
-			if(stmt!=null) {try {
-				stmt.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}}
-			if(conn!=null) {try {
-				conn.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}}
-		}
-		return list;
-	}
 	
 	public OrderVO findRequest(int cNo) {
 		OrderVO o = new OrderVO();
