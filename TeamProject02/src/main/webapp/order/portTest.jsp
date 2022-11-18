@@ -15,9 +15,10 @@
 		})
 		
 		$(document).on("click","#addr",function(){
-			//$("#addrSelected").val("");
+			$("#addrSelected").val("");
 			new daum.Postcode({
 		        oncomplete: function(data) {
+		        	console.log("검색완료"+data.address);
 		            $("#addrSelected").val(data.address);
 		        }
 		    }).open();
