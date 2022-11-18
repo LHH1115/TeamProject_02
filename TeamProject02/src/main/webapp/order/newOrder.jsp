@@ -55,8 +55,14 @@
 	}).open();
 }
 
-   
-   function btn1() {
+	$(function(){
+		$(document).on("click","#port",function(){
+			$("#selected").val("");
+			window.open("newOrderPortfolio.jsp","selectport","width=470, height=500");
+		})
+	});
+	
+   function btn1() 
 	alert('쇼핑몰');}
    function btn2() {
 	alert('홈페이지');}
@@ -98,7 +104,8 @@
 		
 		예상제작비용<input type="text"><br>
 		
-		<button onclick="window.open('newOrderPortpolio.jsp', 'window_name', 'width=430, height=500, location=no, status=no, scrollbars=yes');">포트폴리오 선택</button>
+		<button id="port">포트폴리오 선택</button><br>
+		선택된 포트폴리오: <input type="text" id="selected">
 		<input type="text" id="portname"><br>
 		문의 내용<input type="text" style="width:300px;height:200px;"><br>
 		<input type="submit" value="등록">
