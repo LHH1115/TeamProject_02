@@ -54,7 +54,7 @@
 	    }
 	}).open();
 }
-
+	///포트폴리오 기능
 	$(function(){
 		$(document).on("click","#port",function(){
 			$("#selected").val("");
