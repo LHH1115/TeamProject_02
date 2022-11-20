@@ -55,7 +55,8 @@ $(function(){
 		<button id="port">포트폴리오 선택</button><br>
 		선택된 포트폴리오: <input type="text" id="selected" name="cPortfolio"><br>
 		
-		문의 내용<input type="text" style="width:300px;height:200px;"><br>
+		문의 내용<br>
+		<textarea rows="15" cols="50" style="width:600px; height:200px; font-size: 1.2em; overflow:auto;" name="cInfo"></textarea><br>
 		
 		<input type="submit" value="등록">
 	</form>
