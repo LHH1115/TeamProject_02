@@ -298,7 +298,7 @@ $(function(){
 	
 	</div>
 	
-	</footer><!-- 하단바  -->
+	</footer><!-- 하단바 -->
 	
 </body>
 </html>
