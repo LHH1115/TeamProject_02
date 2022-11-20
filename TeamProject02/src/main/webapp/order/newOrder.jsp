@@ -7,8 +7,99 @@
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+<style type="text/css">
+body{
+  margin: 0px;
+  
+  color : black;
+}
+nav{
+  height: 120px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
+footer{
+  height: 480px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+      color: #9400d3;
+}
+.nav-space{
+  padding: 20px 17px;
+  font-weight: 700;
+ }
+
+.footer-first-space{
+    max-width: 1170px;
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.footer-seceond-space{
+    display: flex;
+    justify-content: space-between;
+    height: 346px;
+    }
+
+.first-bigbox{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-subtitle{
+    color: #919496;
+    font-weight: 900;
+    margin: 20px 0px;
+}
+
+.footer-standard{
+  display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+.character{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-box{
+    width: 54px;
+    height: 54px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.icon:hover {
+  color: #9400d3;
+}
+</style>
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://kit.fontawesome.com/bb9544ccb9.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 	
 $(function(){
@@ -34,8 +125,24 @@ $(function(){
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>	
+	
+	<nav><!-- 메뉴바 -->
+	   <div>
+	    <img src="./image/ball1.jpg" width="132px">
+	  </div>
+	  <div>
+	  <a href="#" class="nav-space">Introduction</a>
+	  <a href="#" class="nav-space">Portfolio</a>
+	  <a href="#"class="nav-space">Connect</a>
+	  <a href="#"class="nav-space">Recruitment</a>
+	      
+	  
+	  </div>
+	</nav><!-- 메뉴바 -->
+	
+	
 	<form  id="f" class="row g-3" style="margin:100px 100px 100px 100px;">
-		<h1>상담신청</h1>
+		<h1>신규 문의 신청</h1>
 		
 		<div class="col-md-6">
 		  <label for="exampleFormControlInput1" class="form-label">회사명</label>
@@ -141,5 +248,57 @@ $(function(){
 		<input type="submit" value="등록" class="btn btn-primary mb-3" style="background-color: #9400d3; border-color: #9400d3;">
 		</div>
 	</form>
+	
+	<footer><!-- 하단바 -->
+ 
+	<div class="footer-first-space">
+	   <div class="footer-seceond-space">
+	    
+		   <div class="first-bigbox">
+		    
+			   <div class="footer-standard">
+			     <img src="./image/ball1.jpg" width="132px">
+			   </div>
+			      
+			    <div class="footer-standard">
+				  <div class="footer-subtitle">Company</div>
+					  <a href="#"class="menu-item">About Us</a>
+					  <a href="#"class="menu-item">History</a>
+			    </div>
+			      
+			    <div class="footer-standard">
+			      <div class="footer-subtitle">Communicates</div>
+					  <a href="#" class="menu-item">Email</a>
+					  <a href="#"class="menu-item">phone</a>
+					  <a href="#"class="menu-item">Instagram</a>
+			    </div>
+			    
+			    <div class="footer-standard">
+			      <div class="footer-subtitle">Recruitment</div>
+					  <a href="#"class="menu-item">my application</a>
+			    </div>
+		 </div>
+		    
+		  <div class="character">
+		      <div class="icon-box">
+		      <i class="fab fa-instagram icon"></i>
+		      </div>  
+		
+		      <div class="icon-box">
+		      <i class="fab fa-twitter icon"></i>
+		      </div>
+		      
+		      <div class="icon-box">
+		      <i class="fab fa-facebook-f icon"></i>
+		      </div>
+		      
+		  </div>
+	  
+	 </div>
+	
+	</div>
+	
+	</footer><!-- 하단바 -->
+	
 </body>
 </html>
