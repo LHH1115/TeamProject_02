@@ -33,8 +33,8 @@ public class OrderDAO {
 		String sql = "insert into "
 				+ "CustomerNew "
 				+ "(cNo,cName,cPhone,cAddr,cManager,cEmail,cService,cPrice,"
-				+ "cInfo,cPortfolio,cMeeting) "
-				+ "values(?,?,?,?,?,?,?,?,?,?,?);";
+				+ "cInfo,cPortfolio) "
+				+ "values(seq_customer.nextval,?,?,?,?,?,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -42,16 +42,15 @@ public class OrderDAO {
 			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, o.getCNo());
-			pstmt.setString(2, o.getCName());
-			pstmt.setString(3, o.getCPhone());
-			pstmt.setString(4, o.getCAddr());
-			pstmt.setString(5, o.getCManager());
-			pstmt.setString(6, o.getCEmail());
-			pstmt.setInt(7, o.getCService());
-			pstmt.setInt(8, o.getCPrice());
-			pstmt.setString(9, o.getCInfo());
-			pstmt.setString(10, o.getCPortfolio());
+			pstmt.setString(1, o.getCName());
+			pstmt.setString(2, o.getCPhone());
+			pstmt.setString(3, o.getCAddr());
+			pstmt.setString(4, o.getCManager());
+			pstmt.setString(5, o.getCEmail());
+			pstmt.setInt(6, o.getCService());
+			pstmt.setInt(7, o.getCPrice());
+			pstmt.setString(8, o.getCInfo());
+			pstmt.setString(9, o.getCPortfolio());
 			
 						
 			re = pstmt.executeUpdate();			

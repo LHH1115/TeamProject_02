@@ -31,7 +31,7 @@ $(function(){
 </script>
 </head>
 <body>
-	<form id="f">
+	<form id="f" action="newOrderOK.do">
 		<h1>상담신청</h1>
 		회사명<input type="text" name="cName">
 		연락처<input type="text" name="cPhone"><br>
