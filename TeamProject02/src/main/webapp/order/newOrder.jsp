@@ -33,13 +33,13 @@ $(function(){
 <body>
 	<form id="f">
 		<h1>상담신청</h1>
-		회사명<input type="text">
-		연락처<input type="text"><br>
-		담당자<input type="text">
-		E-mail<input type="text"><br>
+		회사명<input type="text" name="cName">
+		연락처<input type="text" name="cPhone"><br>
+		담당자<input type="text" name="cManager">
+		E-mail<input type="text" name="cEmail"><br>
 		<hr>
 		<button id="addr">주소검색</button><br>
-		주소: <input type="text" id="addrSelected">
+		주소: <input type="text" id="addrSelected" name="cAddr">
 		<hr>
 		제작구분<br>
 		<input type="radio" name="cService" value="1">쇼핑몰
@@ -50,10 +50,10 @@ $(function(){
 		<input type="radio" name="cService" value="6">유지보수
 		<input type="radio" name="cService" value="7">기타<br>
 		
-		예상제작비용<input type="text"><br>
+		예상제작비용<input type="text" name="cPrice"><br>
 		
 		<button id="port">포트폴리오 선택</button><br>
-		선택된 포트폴리오: <input type="text" id="selected"><br>
+		선택된 포트폴리오: <input type="text" id="selected" name="cPortfolio"><br>
 		
 		문의 내용<input type="text" style="width:300px;height:200px;"><br>
 		
