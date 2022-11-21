@@ -2,6 +2,7 @@ package com.sist.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,11 +34,15 @@ public class OldOrderLoginCheck extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		OrderDAO dao = OrderDAO.getInstance();
-		int cNo = Integer.parseInt(request.getParameter("cNo"));
-		OrderVO o = dao.findRequest(cNo);
+		String cName = request.getParameter("cName");
+		//System.out.println("cname: "+cName);
+		String cPhone = request.getParameter("cPhone");
+		//System.out.println("cPhone: "+cPhone);
 		response.setContentType("text/plain;charset=utf-8");
+		int cno = dao.login(cName, cPhone);
 		PrintWriter out = response.getWriter();
-		out.print(o);
+		//System.out.println("cno: "+cno);
+		out.print(cno);
 		out.close();
 	}
 
