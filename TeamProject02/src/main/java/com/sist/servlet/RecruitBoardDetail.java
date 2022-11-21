@@ -33,7 +33,7 @@ public class RecruitBoardDetail extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int rbNo = Integer.parseInt(request.getParameter("rbNo"));
+		int rbNo = Integer.parseInt(request.getParameter("rbNo"));;
 		RecruitBoardDAO dao = RecruitBoardDAO.getInstance();
 		RecruitBoardVO r = dao.findByNo(rbNo);
 		Gson gson = new Gson();

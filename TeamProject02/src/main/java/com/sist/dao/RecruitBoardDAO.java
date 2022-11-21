@@ -64,7 +64,7 @@ public class RecruitBoardDAO {
 		public ArrayList<RecruitBoardVO> findAll(){
 			ArrayList<RecruitBoardVO> list = new ArrayList<RecruitBoardVO>();
 			String sql = "select rbNo,rTitle,to_char(rStartDate,'yyyy/mm/dd') rStartDate,to_char(rEndDate,'yyyy/mm/dd') rEndDate,"
-					+ "rContent,rWork from RecruitBoard order by rbNo";
+					+ "rContent,rWork from RecruitBoard order by rbNo desc";
 			Connection conn = null;
 			Statement stmt = null;
 			ResultSet rs = null;
