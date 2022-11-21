@@ -372,6 +372,19 @@ footer a:hover{
 </div>
 </div>
 </main>
+
+<div class="container">
+<div class="row my-5">
+	<div class="col-7">
+		<h2>Some quick example text to build on the card title and make up the bulk of the card's content.</h2>
+		<p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	</div>
+	<div class="col-5">
+		<img alt="" src="./image/rocket.png" class="w-100" />
+	</div>
+
+</div>
+</div>
 <!-- 메인창 -->
 
 
