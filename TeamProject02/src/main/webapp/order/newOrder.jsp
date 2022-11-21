@@ -146,22 +146,22 @@ $(function(){
 		
 		<div class="col-md-6">
 		  <label for="exampleFormControlInput1" class="form-label">회사명</label>
-		  <input type="text" class="form-control" id="cName" placeholder="회사 상호명 입력 부탁드립니다.">
+		  <input type="text" class="form-control" name="cName" placeholder="회사 상호명 입력 부탁드립니다.">
 		</div>
 		
 		<div class="col-md-6">
 		  <label for="exampleFormControlInput1" class="form-label">연락처</label>
-		  <input type="text" class="form-control" id="cPhone" placeholder="담당자분 번호 입력 부탁드립니다.">
+		  <input type="text" class="form-control" name="cPhone" placeholder="담당자분 번호 입력 부탁드립니다.">
 		</div>
 		
 		<div class="col-md-6">
 		  <label for="exampleFormControlInput1" class="form-label">담당자</label>
-		  <input type="text" class="form-control" id="cManager" placeholder="대표 담당자분 성함 입력 부탁드립니다.">
+		  <input type="text" class="form-control" name="cManager" placeholder="대표 담당자분 성함 입력 부탁드립니다.">
 		</div>
 		
 		<div class="col-md-6">
 		  <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-		  <input type="text" class="form-control" id="cEmail" placeholder="담당자분 E-mail 입력 부탁드립니다.">
+		  <input type="text" class="form-control" name="cEmail" placeholder="담당자분 E-mail 입력 부탁드립니다.">
 		</div>
 	
 		
@@ -169,7 +169,7 @@ $(function(){
 		
 		<div class="col-md-6">
 		  <label for="exampleFormControlInput1" class="form-label">주소</label>
-		  <input type="text" class="form-control" id="addrSelected" placeholder="주소 검색후 상세주소 입력부탁드립니다.">
+		  <input name="cAddr" type="text" class="form-control" id="addrSelected" placeholder="주소 검색후 상세주소 입력부탁드립니다.">
 		</div>
 		
 		<div class="col-12">
@@ -180,13 +180,13 @@ $(function(){
 		제작구분<br>
 		<select class="form-select" aria-label="Default select example">
 		  <option selected>제작 구분을 선택하여 주세요</option>
-		  <option value="1">쇼핑몰</option>
-		  <option value="2">홈페이지</option>
-		  <option value="3">네이티브 앱</option>
-		  <option value="4">서비스 개발</option>
-		  <option value="5">마케팅</option>
-		  <option value="6">유지보수</option>
-		  <option value="7">기타</option>
+		  <option name="cService" value="1">쇼핑몰</option>
+		  <option name="cService" value="2">홈페이지</option>
+		  <option name="cService" value="3">네이티브 앱</option>
+		  <option name="cService" value="4">서비스 개발</option>
+		  <option name="cService" value="5">마케팅</option>
+		  <option name="cService" value="6">유지보수</option>
+		  <option name="cService" value="7">기타</option>
 		</select>
 		<br>
 			
@@ -225,13 +225,13 @@ $(function(){
 		
 		<div class="col-md-6">
 		  <label for="exampleFormControlInput1" class="form-label">예상제작비용</label>
-		  <input type="text" class="form-control" id="cPrice" placeholder="예상제작비용을 만(원) 단위 숫자로 입력 바랍니다.">
+		  <input type="text" class="form-control" name="cPrice" placeholder="예상제작비용을 만(원) 단위 숫자로 입력 바랍니다.">
 		</div>
 		<br>
 		
 		<div class="col-md-6">
 		  <label for="exampleFormControlInput1" class="form-label">선택된 포트폴리오</label>
-		  <input type="text" class="form-control" id="selected" placeholder="포트폴리오 선택을 클릭해주세요.">
+		  <input type="text" class="form-control" id="selected" name="cPortfolio" placeholder="포트폴리오 선택을 클릭해주세요.">
 			<div class="col-12">
 			<button id="port" class="btn btn-primary mb-3" style="background-color: #9400d3; border-color: #9400d3; margin:10px 0px 0px 5px;">포트폴리오 선택</button>
 			</div>
@@ -245,7 +245,7 @@ $(function(){
 		</div>
 		<br>
 		<div class="col-12">
-		<input type="submit" value="등록" class="btn btn-primary mb-3" style="background-color: #9400d3; border-color: #9400d3;">
+		<input type="submit" name="cInfo" value="등록" class="btn btn-primary mb-3" style="background-color: #9400d3; border-color: #9400d3;">
 		</div>
 	</form>
 	
