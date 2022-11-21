@@ -50,9 +50,7 @@ public class OrderDAO {
 			pstmt.setInt(6, o.getCService());
 			pstmt.setInt(7, o.getCPrice());
 			pstmt.setString(8, o.getCInfo());
-			pstmt.setString(9, o.getCPortfolio());
-			
-						
+			pstmt.setString(9, o.getCPortfolio());			
 			re = pstmt.executeUpdate();			
 		}catch (Exception e) {
 			System.out.println("예외발생:"+e.getMessage());
@@ -64,6 +62,28 @@ public class OrderDAO {
 		return re;
 	}
 	//기존문의
+	
+	public int insertAddInfo(OrderVO o) {
+		int re = -1;
+		String sql = "insert into cAddInfo(addInfoNo, cNo, content) values(seq_addInfo.nextval, ?,?)";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, o.getCNo());
+			pstmt.setString(2, o.getContent());		
+			re = pstmt.executeUpdate();			
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}finally {			
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}	
+		return re;
+	}
 	
 	public int login(String cname, String cphone) {
 		int cno = -1;
