@@ -248,13 +248,13 @@ footer a:hover{
 		$("#oldOrderLogin").submit(function(e){
 			e.preventDefault();
 			var data = $(this).serializeArray();
-			console.log(data);
+			//console.log(data);
 			$.ajax({
 				url:"/TeamProject02/OldOrderLoginCheck",
 				data:data,
 				type: "post",
 				success:function(cNo){
-					console.log(cNo);
+					//console.log(cNo);
 					if(cNo > 0){
 						alert("로그인 성공");
 						//액션 통해서 페이지 옮겨도 됩니다.
@@ -339,7 +339,7 @@ footer a:hover{
  		<br>		
 	</form>
 	<form action="oldOrderDetail.do" method="post" id="logForm">
-		<input type="text" name="cNo" id="cNo">
+		<input type="hidden" name="cNo" id="cNo">
 	</form>
 <!-- 하단바 -->
 <footer>
