@@ -338,7 +338,7 @@ footer a:hover{
 <div class="row">
 	<div class="col-md-4 col-sm-12 wrapper">
 		<div class="card">
-			<img src="https://aramobile.com/assets/img/prototyping.gif" class="card-img-top" alt="...">
+			<img src="" class="card-img-top" alt="...">
 		<div class="card-body">
    			<h5 class="card-title text-center">trust</h5>
    			<p class="card-text">신뢰</p>
