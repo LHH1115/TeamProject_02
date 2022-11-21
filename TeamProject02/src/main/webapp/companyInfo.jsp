@@ -341,7 +341,7 @@ footer a:hover{
 			<img src="https://aramobile.com/assets/img/prototyping.gif" class="card-img-top" alt="...">
 		<div class="card-body">
    			<h5 class="card-title text-center">trust</h5>
-   			<p class="card-text">신뢰가 가장 중요하다.</p>
+   			<p class="card-text">신뢰</p>
 		<button type="button" class="btn btn-dark">Perfume</button>
 		</div>
 		</div>
@@ -349,7 +349,7 @@ footer a:hover{
 	
 	<div class="col-md-4 col-sm-12 wrapper">
 		<div class="card">
-			<img src="https://www.celine.com/on/demandware.static/-/Sites-masterCatalog/default/dwbc4c807b/images/large/6PC1H0505.37TT_1_100ML_DANS_PARIS.jpg" class="card-img-top" alt="...">
+			<img src="" class="card-img-top" alt="...">
 		<div class="card-body">
    			<h5 class="card-title text-center">수상내역</h5>
    			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -360,7 +360,7 @@ footer a:hover{
 	
 	<div class="col-md-4 col-sm-12 wrapper">
 		<div class="card">
-			<img src="https://www.celine.com/on/demandware.static/-/Sites-masterCatalog/default/dwbc4c807b/images/large/6PC1H0505.37TT_1_100ML_DANS_PARIS.jpg" class="card-img-top" alt="...">
+			<img src="" class="card-img-top" alt="...">
 		<div class="card-body">
    			<h5 class="card-title text-center">인재상</h5>
    			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
