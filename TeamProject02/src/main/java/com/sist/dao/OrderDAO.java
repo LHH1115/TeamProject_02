@@ -90,21 +90,20 @@ public class OrderDAO {
 		return cno;
 	}
 	
-	public ArrayList<OrderVO> findRequest(OrderVO o) {
+	public ArrayList<OrderVO> findRequest(int cno) {
 		ArrayList<OrderVO> list = new ArrayList<OrderVO>();
 		String sql = "select n.cno,n.cname,o.cprogress from CustomerNew n, "
-				+ "CustomerOrigin o where n.cNo = o.cNo and o.cno=2 and n.cName=? and n.cPhone=?";
+				+ "CustomerOrigin o where n.cNo = o.cNo and o.cno="+cno;
 		Connection conn = null;
-		PreparedStatement pstmt = null;
+		Statement stmt = null;
 		ResultSet rs = null;
 		try {
 			Context context = new InitialContext();
 			DataSource ds  =(DataSource) context.lookup("java:/comp/env/mydb");
+			OrderVO o = new OrderVO();
 			conn = ds.getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, o.getCName());
-			pstmt.setString(2, o.getCPhone());
-			rs = pstmt.executeQuery();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
 			if(rs.next()) {
 				o.setCNo(rs.getInt("n.cno"));
 				o.setCName(rs.getString("n.cname"));
@@ -120,8 +119,8 @@ public class OrderDAO {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}}
-			if(pstmt!=null) {try {
-				pstmt.close();
+			if(stmt!=null) {try {
+				stmt.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

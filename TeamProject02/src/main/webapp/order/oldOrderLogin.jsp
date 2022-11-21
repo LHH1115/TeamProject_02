@@ -19,14 +19,14 @@
 			var data = $(this).serializeArray();
 			console.log(data);
 			$.ajax({
-				url:"OldOrderLoginCheck",
+				url:"/TeamProject02/OldOrderLoginCheck",
 				data:data,
 				success:function(cno){
 					console.log(cno);
 					if(cno > 0){
 						alert("로그인 성공");
 						//액션 통해서 페이지 옮겨도 됩니다.
-						location.href("oldOrderDetail.jsp?cNo="+cNo);
+						//$(location).attr('href', "oldOrderDetail.jsp?cNo="+cno);
 					}else{
 						alert("로그인 실패");
 						$("#cPhone").empty();
