@@ -39,10 +39,10 @@ public class OldOrderLoginCheck extends HttpServlet {
 		String cPhone = request.getParameter("cPhone");
 		//System.out.println("cPhone: "+cPhone);
 		response.setContentType("text/plain;charset=utf-8");
-		int cno = dao.login(cName, cPhone);
+		int cNo = dao.login(cName, cPhone);
 		PrintWriter out = response.getWriter();
 		//System.out.println("cno: "+cno);
-		out.print(cno);
+		out.print(cNo);
 		out.close();
 	}
 

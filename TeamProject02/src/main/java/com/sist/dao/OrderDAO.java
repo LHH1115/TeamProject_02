@@ -90,25 +90,23 @@ public class OrderDAO {
 		return cno;
 	}
 	
-	public ArrayList<OrderVO> findRequest(int cno) {
-		ArrayList<OrderVO> list = new ArrayList<OrderVO>();
+	public OrderVO findRequest(int cNo) {
+		OrderVO o = new OrderVO();
 		String sql = "select n.cno,n.cname,o.cprogress from CustomerNew n, "
-				+ "CustomerOrigin o where n.cNo = o.cNo and o.cno="+cno;
+				+ "CustomerOrigin o where n.cNo = o.cNo and o.cno="+cNo;
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
 			Context context = new InitialContext();
 			DataSource ds  =(DataSource) context.lookup("java:/comp/env/mydb");
-			OrderVO o = new OrderVO();
 			conn = ds.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			if(rs.next()) {
-				o.setCNo(rs.getInt("n.cno"));
-				o.setCName(rs.getString("n.cname"));
-				o.setCProgress(rs.getInt("o.cprogress"));
-				list.add(o);
+				o.setCNo(rs.getInt("cNo"));
+				o.setCName(rs.getString("cName"));
+				o.setCProgress(rs.getInt("cProgress"));
 			}
 		} catch (Exception e) {
 			System.out.println("Exception: "+e);
@@ -132,7 +130,7 @@ public class OrderDAO {
 				e.printStackTrace();
 			}}
 		}
-		return list;
+		return o;
 	}
 	
 	public int progress() {
