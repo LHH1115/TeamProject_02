@@ -71,7 +71,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 $(function() {
-    function animated_contents() {
+	function animated_contents() {
         $(".zt-skill-bar > div ").each(function (i) {
             var $this  = $(this),
                 skills = $this.data('width');
@@ -90,10 +90,12 @@ $(function() {
 </script>
 </head>
 <body>
-	<h1 id="cName">카카오</h1>
+		cno : ${cNo }	<br>
+	
+	<h1 id="cName">${cName }</h1>
 	<img src="oldOrderImages/kakao.png" style="width:800px; height:500px;" id="cPhoto"><br>
 	<h2>진척도</h2>
-	<div class="zt-skill-bar" style="height: 35px;width: 800px;"><div data-width="60" style="height: 35px;width: 800px;">진행도<span>60%</span></div></div>
+	<div class="zt-skill-bar" style="height: 35px;width: 800px;"><div data-width="60" style="height: 35px;width: 800px;">진행도<span>${cProgress }%</span></div></div>
 	<br>
 	<h2>추가 요청 사항</h2>
 

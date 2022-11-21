@@ -253,12 +253,14 @@ footer a:hover{
 				url:"/TeamProject02/OldOrderLoginCheck",
 				data:data,
 				type: "post",
-				success:function(cno){
-					console.log(cno);
-					if(cno > 0){
+				success:function(cNo){
+					console.log(cNo);
+					if(cNo > 0){
 						alert("로그인 성공");
 						//액션 통해서 페이지 옮겨도 됩니다.
-						$(location).attr('href', "oldOrderDetail.jsp?cNo="+cno);
+						//$(location).attr('href', "oldOrderDetail.jsp?cNo="+cno);
+						$("#cNo").val(cNo)
+						$("#logForm").trigger("submit");
 					}else{
 						alert("로그인 실패");
 						$("#cPhone").empty();
@@ -334,8 +336,10 @@ footer a:hover{
 		<div class="col-auto">	
    		<button type="submit" class="btn btn-primary mb-3" value="로그인" style="background-color: #9400d3; border-color: #9400d3;">로그인</button>
  		</div>
- 		<br>
-		
+ 		<br>		
+	</form>
+	<form action="oldOrderDetail.do" method="post" id="logForm">
+		<input type="text" name="cNo" id="cNo">
 	</form>
 <!-- 하단바 -->
 <footer>
