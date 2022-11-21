@@ -65,20 +65,50 @@ public class OrderDAO {
 	}
 	//기존문의
 	
-	public OrderVO findRequest(int cNo) {
-		OrderVO o = new OrderVO();
-		String sql = "select * from CustomerNew n, CustomerOrigin o where n.cNo = o.cNo and n.cNo="+cNo;
+	public int login(String cname, String cphone) {
+		int cno = -1;
+		String sql = "select cno from customerNew where cname='"+cname+"' and cphone='"+cphone+"'";
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			stmt = conn.createStatement();		
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				cno = rs.getInt("cno");
+			}
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}finally {			
+			if(rs != null) { try{rs.close();}catch(Exception e) {} }
+			if(stmt != null) { try{stmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}		
+		return cno;
+	}
+	
+	public ArrayList<OrderVO> findRequest(int cno) {
+		ArrayList<OrderVO> list = new ArrayList<OrderVO>();
+		String sql = "select n.cno,n.cname,o.cprogress from CustomerNew n, "
+				+ "CustomerOrigin o where n.cNo = o.cNo and o.cno="+cno;
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
 			Context context = new InitialContext();
 			DataSource ds  =(DataSource) context.lookup("java:/comp/env/mydb");
+			OrderVO o = new OrderVO();
 			conn = ds.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			if(rs.next()) {
-				//vo 다 만들면 추가
+				o.setCNo(rs.getInt("n.cno"));
+				o.setCName(rs.getString("n.cname"));
+				o.setCProgress(rs.getInt("o.cprogress"));
+				list.add(o);
 			}
 		} catch (Exception e) {
 			System.out.println("Exception: "+e);
@@ -102,7 +132,7 @@ public class OrderDAO {
 				e.printStackTrace();
 			}}
 		}
-		return o;
+		return list;
 	}
 	
 	public int progress() {
