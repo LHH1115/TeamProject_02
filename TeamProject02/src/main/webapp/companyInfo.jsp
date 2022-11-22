@@ -14,8 +14,8 @@
 	body{
 	  margin: 0px;
 	  color: black;
-	 font-family: 'Jua', sans-serif;
-	 font-size:18px; 
+	  font-family: 'Jua', sans-serif;
+	  font-size:18px; 
 	}
 	nav{
 	  height: 100px;
@@ -163,9 +163,9 @@
 
 
 main{
-    height: 600px;
+    height: 1000px;
     background-color: white;
-    
+    margin-top: 130px;
    /* display: flex;*/
     align-items: center;
     justify-content: center;
@@ -283,6 +283,11 @@ footer a:hover{
     font-weight: 600;
 }
 
+/*.text-center{
+	margin-top:100px;
+}*/
+
+
 
 </style>
 <script src="https://kit.fontawesome.com/bb9544ccb9.js" crossorigin="anonymous"></script>
@@ -399,7 +404,7 @@ footer a:hover{
 </div>
 
 <main>
-<div class="text-center mt-8 mb-3"> 
+<div class="text-center mt-5 mb-5"> 
 <br>
 <br>
 <h3>부서소개</h3>
@@ -409,35 +414,38 @@ footer a:hover{
 <div class="row">
 	<div class="col-md-4 col-sm-12 wrapper">
 		<div class="card">
-			<img src="" class="card-img-top" alt="...">
-		<div class="card-body">
-   			<h5 class="card-title text-center">개발팀</h5>
-   			<p class="card-text">Front-end:</p>
-   			<div>카카오 웹서비스의 프론트엔드를 개발합니다. VanillaJS부터 React, Vue.js와 같은 프레임워크뿐 아니라 프론트엔드의 다양한 기술을 적극적으로 활용하고 있습니다. 데스크톱에서 모바일, 다음에서 카카오톡까지 이어지는 폭넓은 경험을 통해 경쟁력 있는 프론트엔드 개발자로서 성장할 수 있습니다.</div>
-   			<p class="card-text">Back-end:</p>
-		<button type="button" class="btn btn-dark">Perfume</button>
+			<img src="https://aramobile.com/assets/img/icons/development.png" class="card-img-top" alt="...">
+			<!-- img 출처: https://aramobile.com/ -->
+		<div class="card-body text-center">
+   			<h5 class="card-title">개발</h5>
+   			<p class="card-text">Front-end : Back-end</p>
+   			<div>1.웹 기술 언어 활용하여 다양한 플랫폼과의 웹 호환이 가능한 어플리케이션을 개발
+				<br>2.저장된 데이터를 활용하거나 비즈니스 로직을 처리하여 적절한 응답을 전달하는 서버개발</div>
 		</div>
 		</div>
 	</div>
 	
 	<div class="col-md-4 col-sm-12 wrapper">
-		<div class="card">
-			<img src="" class="card-img-top" alt="...">
-		<div class="card-body">
-   			<h5 class="card-title text-center">수상내역</h5>
-   			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		<button type="button" class="btn btn-dark">Perfume</button>
+		<div class="card text-center">
+			<img src="https://aramobile.com/assets/img/icons/compass.png" class="card-img-top" alt="...">
+			<!-- img 출처: https://aramobile.com/ -->
+		<div class="card-body mb-2">
+   			<h5 class="card-title text-center">UX</h5>
+   			<br>
+   			<p class="card-text">사용자들이 좀 더 쉽고 편리하게 서비스를 이용할 수 <br>있도록 실질적인 디자인 해결책 구상<br>
+								더 나은 사용자 경험을 위해 기획/디자인/개발 파트와 긴밀하게 협업</p>
 		</div>
 		</div>
 	</div>
 	
 	<div class="col-md-4 col-sm-12 wrapper">
-		<div class="card">
-			<img src="" class="card-img-top" alt="...">
-		<div class="card-body">
-   			<h5 class="card-title text-center">인재상</h5>
-   			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		<button type="button" class="btn btn-dark">Perfume</button>
+		<div class="card text-center">
+			<img src="https://aramobile.com/assets/img/icons/strategy.png" class="card-img-top" alt="...">
+			<!-- img 출처: https://aramobile.com/ -->
+		<div class="card-body mb-4">
+   			<h5 class="card-title text-center">네트워크</h5>
+   			<br>
+   			<p class="card-text">데이터센터 네트워크를 적시에 설계, 구축, 운영하며 <br>대용량 트래픽 분산처리를 트래픽을 안정적으로 <br>업무 처리 .</p>
 		</div>
 		</div>
 	</div>
