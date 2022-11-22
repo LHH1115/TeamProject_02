@@ -12,7 +12,19 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
+$(function(){
+	$(document).on("click","#test",function(e){
+		//e.preventDefault();
+		$("#selected").val("");
+		window.open("/TeamProject02/calendar.jsp","selectport","width=470, height=500");
+	});
+	
+	$.ajax({
+		
+	});
+	
+});
+	
 </script>
 </head>
 <body>
@@ -30,7 +42,7 @@ menu
 	</div>
 	<br>
 	<br>
-	<div class="text center" >
+	<div>
 		<h2><strong>백엔드 개발자 경력 영입(rTitle) (2022년 지원)</strong></h2>				
 		<h4>[결과 및 코딩테스트 진행 안내]</h4>
 	</div>
@@ -43,10 +55,16 @@ menu
 		<br>
 			
 		<p>다음 전형인 코딩테스트는 온라인 코딩테스트로 진행합니다.<br>
-			아래 달력을 이용하여 코딩테스트 가능한 날짜와 시간을 선택해주시길 바랍니다.</p>
-
+			아래에서 코딩테스트 가능한 날짜와 시간을 선택해주시길 바랍니다.</p>
 	</div>
+	
+	<button id="test">달력</button>
+
 </div>
+
+
+
+
 
 <!-- 메인창 끝  -->
 		
