@@ -20,7 +20,7 @@ public class OldOrderAddRequsestOKAction implements CompanyAction {
 		
 		
 		String path = request.getRealPath("/order/cFile");
-		System.out.print(path);
+		//System.out.print(path);
 		MultipartRequest multi = new MultipartRequest(
 				request,
 				path,

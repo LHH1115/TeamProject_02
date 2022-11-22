@@ -1,7 +1,5 @@
 package com.sist.vo;
 
-import java.util.Date;
-
 import lombok.Data;
 
 @Data
@@ -16,7 +14,7 @@ public class OrderVO {
 	private int cPrice;
 	private String cInfo;
 	private String cPortfolio;
-	private Date cMeeting;
+	private String cMeeting;
 	private int cProgress;
 	private int photoNo;
 	private String photoPath;

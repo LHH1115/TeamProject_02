@@ -26,7 +26,7 @@ public class OrderDAO {
 	private OrderDAO() {		
 	}	
 	
-	//신규문
+	//신규문의
 	public int insertNewOrder(OrderVO o) {
 		int re = -1;
 		
@@ -61,6 +61,29 @@ public class OrderDAO {
 		
 		return re;
 	}
+	
+	public int insertMeeting(OrderVO o) {
+		int re = -1;
+		String sql = "update CustomerNew set cMeeting=(to_date(?,'yyyy/mm/dd HH24:MI:SS')) where cNo=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, o.getCMeeting());
+			pstmt.setInt(2, o.getCNo());		
+			re = pstmt.executeUpdate();			
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}finally {			
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}	
+		return re;
+	}
+	
 	//기존문의
 	
 	public int insertFile(OrderVO o) {
