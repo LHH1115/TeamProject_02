@@ -64,7 +64,7 @@ public class OrderDAO {
 	
 	public int insertMeeting(OrderVO o) {
 		int re = -1;
-		String sql = "update CustomerNew set cMeeting=(to_date(?,'yyyy/mm/dd HH24:MI:SS')) where cNo=?";
+		String sql = "update CustomerNew set cMeeting=(to_date(?,'mm/dd/yyyy HH24:MI:SS')) where cNo=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {

@@ -1,3 +1,4 @@
+<%@page import="com.sist.dao.OrderDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -34,14 +35,46 @@
 	    	 $("#time").removeClass("timeShow");
         	 $("#time").addClass("timeHidden");
 	    });
+	    
+	    $("#btn_add").click(function(e){
+	    	e.preventDefault();
+	    	var date = "";
+	    	date += $("#testDatepicker").val();
+	    	date += " "+$("#time").val();
+	    	console.log(date);
+	    	$("#date").val(date);
+	    });
+	    
+	    $("#f").submit(function(e){
+	    	e.preventDefault();
+	    	var data =$(this).serializeArray();
+	    	$.ajax({
+	    		url:"/TeamProject02/DateTest",
+	    		data,data,
+	    		success:function(re){
+	    			if(re>0){
+	    				alert("전송 성공");
+	    			}else{
+	    				alert("전송 실패");
+	    			}
+	    		}
+	    	})
+	    });
 	});
 </script>
 </head>
 <body>
-	<input type="text" id="testDatepicker" name="date">
+	<form action="" id="f">
+	<input type="text" id="testDatepicker" name="date"><br>
+	cNo: <input type="text" name="cNo"><br>
 	<select id="time" class="timeHidden">
-		<option value="1">14:00</option>
-		<option value="2">16:00</option>
-	</select>
+		<option value="14:00:00">14:00</option>
+		<option value="16:00:00">16:00</option>
+	</select><br>
+	date: <input type="text" name="finalDate" id="date"><br>
+	<button id="btn_add">선택</button>
+	<input type="submit" value="전송">
+	</form>
+	
 </body>
 </html>
