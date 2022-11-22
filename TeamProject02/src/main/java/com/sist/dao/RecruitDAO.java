@@ -13,6 +13,7 @@ import com.sist.vo.AFileVO;
 import com.sist.vo.ALinkVO;
 import com.sist.vo.ApplicantVO;
 import com.sist.vo.RecruitVO;
+import com.sist.vo.ScheduleVO;
 
 public class RecruitDAO {
 	
@@ -286,9 +287,25 @@ public class RecruitDAO {
 	}
 	
 	
-	public int setSchedule() {
+	public int insertMeeting(ScheduleVO b) {
 		int re = -1;
-		
+		String sql = "insert into ApplicantOrigin(aMeeting,ano,alevel) values((to_date(?,'yyyy-mm-dd HH24:MI')),?,1 )";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, b.getAMeeting());
+			pstmt.setInt(2, b.getANo());
+			re = pstmt.executeUpdate();			
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}finally {			
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}	
 		return re;
 	}
 	

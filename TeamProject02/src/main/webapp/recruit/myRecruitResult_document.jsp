@@ -54,7 +54,7 @@ menu
 			아래에서 코딩테스트 가능한 날짜와 시간을 선택해주시길 바랍니다.</p>
 	</div>
 	
-	<button id="test">달력</button>
+	<button id="calendar">달력</button>
 
 </div>
 
