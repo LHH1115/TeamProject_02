@@ -9,14 +9,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
-<style type="text/css">
-	.timeHidden{
-		visibility: hidden;
-	}
-	.timeShow{
-		visibility: visible;
-	}
-</style>
 <script type="text/javascript">
 	$(function() {
 	    /*$( "#testDatepicker" ).datepicker({
@@ -43,11 +35,11 @@
 	    	format: "Y-m-d H:i",
 			changeMonth: true,
 			allowTimes: [
-				'12:00','13:00'
+				'12:00','16:00'
 			],
 	        beforeShowDay: function(date){
 				var day = date.getDay();
-				return [(day != 5 && day != 6)];
+				return [(day != 0 && day != 6)];
 			},
 	        onSelect: function(selectedDate){
 	       		$("#time").removeClass("timeHidden");
