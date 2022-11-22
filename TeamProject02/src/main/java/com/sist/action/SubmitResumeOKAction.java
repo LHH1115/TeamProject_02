@@ -15,6 +15,7 @@ import com.sist.vo.AFileVO;
 import com.sist.vo.ALinkVO;
 import com.sist.vo.ApplicantVO;
 
+
 public class SubmitResumeOKAction implements CompanyAction {
 
 	@Override

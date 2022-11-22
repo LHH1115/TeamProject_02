@@ -23,12 +23,30 @@
 			$('.mylink').last().remove(); 
 			$('.linkbr').last().remove(); 
 		});
-		var name = ${name};
-		console.log(name);
+		
 		$.ajax({
 			url:"getMyResume",
-		
-			success:function(applicant){
+			data:{"name":"${name}","type":${type},"info":"${info}"},
+			success:function(data){
+	
+				var info = JSON.parse(data.info);
+				var links = JSON.parse(data.links);
+				var file = JSON.parse(data.file);
+			
+				console.log(links.length);
+				
+				$("#aname").val(info.aName);
+				$("#aphone").val(info.aPhone);
+				$("#aemail").val(info.aEmail);
+				
+				
+				$.each(links,function(key,value){
+					var linkInput = $('<input type="text" class="mylink form-control" id="links" name="links"><br class="linkbr">').val(value.links);
+					$("#link").append(linkInput);
+					console.log(value);
+				});
+				
+				
 			}
 		});
 		
@@ -56,7 +74,7 @@
 		<button type="button" class="btn btn-primary" id="btnadd">+</button>
 		<button type="button" class="btn btn-primary" id="btnremove">-</button>
 		<br>
-		<input type="text" class="mylink form-control" id="links" name="links"><br class="linkbr">
+		<!--<input type="text" class="mylink form-control" id="links" name="links"><br class="linkbr"> -->
 		</div>
 		<div>
 		<label for="afile">첨부서류</label>
