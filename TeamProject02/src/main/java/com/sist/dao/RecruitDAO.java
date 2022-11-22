@@ -3,6 +3,7 @@ package com.sist.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -141,8 +142,75 @@ public class RecruitDAO {
 			}
 		}catch(Exception e) {
 			System.out.println("findMyResume exception occurred!!:"+e.getMessage());
-		}
+		}finally {			
+			if(rs != null) { try{rs.close();}catch(Exception e) {} }
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}			
 		return a;
+	}
+	
+	public ArrayList<ALinkVO> findMyLinks(int ano) {
+		ArrayList<ALinkVO> list = new ArrayList<ALinkVO>();
+		ALinkVO l = null;
+		
+		String sql = "select * from alink where ano = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,ano);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				l = new ALinkVO();
+				l.setAlinkNO(rs.getInt("alinkno"));
+				l.setaNO(rs.getInt("ano"));
+				l.setLinks(rs.getString("links"));
+				list.add(l);
+			}
+		}catch(Exception e) {
+			System.out.println("findMyResume exception occurred!!:"+e.getMessage());
+		}finally {			
+			if(rs != null) { try{rs.close();}catch(Exception e) {} }
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}		
+		
+		return list;
+	}
+	public AFileVO findMyfile(int ano) {
+		AFileVO f = null;
+		
+		String sql = "select * from afile where ano = ? ";
+	
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,ano);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				f = new AFileVO();
+				f.setaFileNo(rs.getInt("afileno"));
+				f.setaNo(rs.getInt("ano"));
+				f.setaFilepath(rs.getString("afilepath"));
+			}
+		}catch(Exception e) {
+			System.out.println("findMyfile exception occurred!!:"+e.getMessage());
+		}finally {			
+			if(rs != null) { try{rs.close();}catch(Exception e) {} }
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}			
+		return f;
 	}
 	
 	public int UpdateResume() {

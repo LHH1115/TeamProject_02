@@ -14,6 +14,7 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		String name = request.getParameter("aname");
 		int type = Integer.parseInt(request.getParameter("radio"));
 		String info = request.getParameter("info");
@@ -24,7 +25,9 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 			return "loginInfoNone.jsp";
 		}
 		if(a.getaStatus() == 0) {
-			request.setAttribute("name", a.getaName());
+			request.setAttribute("name", name);
+			request.setAttribute("type", type);
+			request.setAttribute("info", info);
 			return "myRecruitUpdate.jsp";
 		}
 		return "newRecruitBoard.jsp";
