@@ -115,7 +115,7 @@ public class RecruitDAO {
 			pstmt.setString(1, a.getAName());
 			pstmt.setString(2, a.getAPhone());
 			pstmt.setString(3, a.getAEmail());			
-			pstmt.setString(4, a.getAResumePath());			
+			pstmt.setString(4, a.getATitle());			
 			pstmt.setInt(5, a.getAWork());			
 			pstmt.setInt(6, a.getAStatus());			
 			re = pstmt.executeUpdate();	
@@ -210,6 +210,7 @@ public class RecruitDAO {
 				a.setAEmail(rs.getString("aemail"));
 				a.setAWork(rs.getInt("awork"));
 				a.setAStatus(rs.getInt("astatus"));
+				a.setATitle(rs.getString("aresumepath"));
 			}
 		}catch(Exception e) {
 			System.out.println("findMyResume exception occurred!!:"+e.getMessage());

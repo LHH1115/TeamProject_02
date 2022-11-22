@@ -43,7 +43,7 @@ menu
 	<br>
 	<br>
 	<div>
-		<h2><strong>백엔드 개발자 경력 영입(rTitle) (2022년 지원)</strong></h2>				
+		<h2><strong>${title} (2022년 지원)</strong></h2>				
 		<h4>[결과 및 코딩테스트 진행 안내]</h4>
 	</div>
 	

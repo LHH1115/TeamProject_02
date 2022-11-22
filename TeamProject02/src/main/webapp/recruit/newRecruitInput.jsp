@@ -25,18 +25,19 @@
 		});
 		
 		// 김영빈 추가
-		<% String rTitle = request.getParameter("rTitle");%>
+		<% String aTitle = request.getParameter("rTitle");%>
 		// 김영빈 추가
 	});
 </script>
 </head>
 <body>
 <!-- // 김영빈 추가 -->
-<h2><%=rTitle %></h2>
+<h2><%=aTitle %></h2>
 <!-- // 김영빈 추가 -->
 
 <div class="insert">
 	<form action="submitResumeOK.do" method="post" enctype="multipart/form-data">
+		<input type="hidden" value="<%=aTitle %>" name="atitle">
 		<div class="form-group">
 		<label for="aname">이름</label>
 		<input type="text" id="aname" name="aname" class="form-control"><br>

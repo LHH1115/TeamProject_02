@@ -28,7 +28,7 @@
 		});
 		
 		$.ajax({
-			url:"getMyResume",
+			url:"/TeamProject02/getMyResume",
 			data:{"name":"${name}","type":${type},"info":"${info}"},
 			success:function(data){
 	
@@ -36,8 +36,9 @@
 				var links = JSON.parse(data.links);
 				var file = JSON.parse(data.file);
 			
-				console.log(links.length);
-				
+				console.log(info.aTitle);
+				$("#title").html(info.aTitle);
+					
 				$("#aname").val(info.aName);
 				$("#aphone").val(info.aPhone);
 				$("#aemail").val(info.aEmail);
@@ -70,7 +71,7 @@
 </script>
 </head>
 <body>
-<h1>2022 개발팀 지원</h1>
+<h1 id="title"></h1>
 <div class="insert">
 	<form action="updateResumeOK.do" method="post" enctype="multipart/form-data">
 		<div class="form-group">
@@ -100,8 +101,8 @@
 		<input type="file" id="afile" name="afile" multiple="multiple"/><br>
 		</div>
 		<input type="submit" class="btn btn-primary" id="submit"value="제출">
-		<input type="text" name="markn" id="markn">
-		<input type="text" name="markp" id="markp">
+		<input type="hidden" name="markn" id="markn">
+		<input type="hidden" name="markp" id="markp">
 	</form>
 </div>
 </body>

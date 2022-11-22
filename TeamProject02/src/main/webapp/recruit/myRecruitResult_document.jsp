@@ -18,11 +18,6 @@ $(function(){
 		$("#selected").val("");
 		window.open("/TeamProject02/calendar.jsp","selectport","width=470, height=500");
 	});
-	
-	$.ajax({
-		
-	});
-	
 });
 	
 </script>
@@ -43,7 +38,7 @@ menu
 	<br>
 	<br>
 	<div>
-		<h2><strong>백엔드 개발자 경력 영입(rTitle) (2022년 지원)</strong></h2>				
+		<h2><strong>${title } (2022년 지원)</strong></h2>				
 		<h4>[결과 및 코딩테스트 진행 안내]</h4>
 	</div>
 	
@@ -52,7 +47,7 @@ menu
 		<p>안녕하세요. ${name }님 <br>grape 인재영입담당자입니다.</p>
 		<br>
 		
-		<h4><strong>백엔드 개발자 경력 영입(rTitle) 서류전형 합격을 진심으로 축하드립니다!</strong></h4>
+		<h4><strong>${title } 서류전형 합격을 진심으로 축하드립니다!</strong></h4>
 		<br>
 			
 		<p>다음 전형인 코딩테스트는 온라인 코딩테스트로 진행합니다.<br>
