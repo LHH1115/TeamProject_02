@@ -66,6 +66,7 @@
 	    	date += $("#testDatepicker").val();
 	    	console.log(date);
 	    	$("#date").val(date);
+	    	$("#f").trigger("submit");
 	    });
 	    
 	    $("#f").submit(function(e){
@@ -92,7 +93,6 @@
 	cNo: <input type="text" name="cNo"><br>
 	date: <input type="text" name="finalDate" id="date"><br>
 	<button id="btn_add">선택</button>
-	<input type="submit" value="전송">
 	</form>
 	
 </body>
