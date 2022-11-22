@@ -185,24 +185,35 @@ footer a:hover{
     </nav>
 <!-- 메뉴바 -->	
 	
-<form  id="f" style="margin:100px 100px 100px 100px;" >
+<form id="f" style="margin:100px 100px 100px 100px;" method="post" action="oldOrderOK.do" enctype="multipart/form-data">
 	
-	<h1 id="cName">카카오 진행상황</h1>
+	<h1 id="cName">${cName } 진행상황</h1>
 	<img src="oldOrderImages/kakao.png" style="width:800px; height:500px;" id="cPhoto"><br>
 	
 	
-	<label class="form-label">진행도</label><br>
+	<label class="form-label"">진행도</label><br>
 	<div class="progress" style="height:30px;">
-	  <div class="progress-bar" role="progressbar" aria-label="Example with label" style="height:30px; width: 25%; background-color: #9400d3; border-color: #9400d3;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+	  <div class="progress-bar" role="progressbar" aria-label="Example with label" style="height:30px; width: ${cProgress }%; background-color: #9400d3; border-color: #9400d3;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${cProgress }%</div>
 	</div>
-	
+	<br>
+	<hr>
 	<div class="mb-3">
 		  <label for="cAdd" class="form-label">추가 문의 내용</label>
-		  <textarea class="form-control" id="addInfoNo" rows="3" placeholder="추가 문의 내용 입력바랍니다."></textarea>
+		  <textarea name="content" id="content" class="form-control" id="addInfoNo" rows="3" placeholder="추가 문의 내용 입력바랍니다."></textarea>
 	</div>
+		<input type="hidden" name="cNo" value="${cNo }">
+	
+	<div class="input-group" style="width:500px;">
+ 	 <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="uploadFile" >
+ 	</div>
+ 	
+ 	<br>
+ 	<hr>
 	<div class="col-12">
 		<input type="submit" value="등록" class="btn btn-primary mb-3" style="background-color: #9400d3; border-color: #9400d3;">
 	</div>
+	
+	
 </form>	
 
 <!-- 하단바 -->
