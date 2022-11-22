@@ -21,15 +21,20 @@
 		});
 		$("#btnremove").click(function(){
 			$('.mylink').last().remove(); 
-			$('.linkbr').last().remove(); 
+			$('.linkbr').last().remove();
 		});
 		
-		
+		// 김영빈 추가
+		<% String rTitle = request.getParameter("rTitle");%>
+		// 김영빈 추가
 	});
 </script>
 </head>
 <body>
-<h1>2022 개발팀 지원</h1>
+<!-- // 김영빈 추가 -->
+<h2><%=rTitle %></h2>
+<!-- // 김영빈 추가 -->
+
 <div class="insert">
 	<form action="submitResumeOK.do" method="post" enctype="multipart/form-data">
 		<div class="form-group">
@@ -61,6 +66,4 @@
 	</form>
 </div>
 </body>
-
-
 </html>

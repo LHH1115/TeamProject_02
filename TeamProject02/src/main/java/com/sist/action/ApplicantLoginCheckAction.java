@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sist.dao.RecruitBoardDAO;
 import com.sist.dao.RecruitDAO;
 import com.sist.vo.ApplicantVO;
 
@@ -21,6 +22,8 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 		
 		RecruitDAO dao = RecruitDAO.getInstance();
 		ApplicantVO a = dao.findMyResume(name, type, info);
+		
+
 		if(a == null) {
 			return "loginInfoNone.jsp";
 		}
@@ -30,6 +33,26 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 			request.setAttribute("info", info);
 			return "myRecruitUpdate.jsp";
 		}
+		 
+		// 김영빈 추가
+		if(a.getAStatus() == 1) {
+			request.setAttribute("name", name);
+			return "myRecruitResult_document.jsp";
+		}
+		if(a.getAStatus() == 2) {
+			request.setAttribute("name", name);
+			return "myRecruitResult_coding.jsp";
+		}
+		if(a.getAStatus() == 3) {
+			request.setAttribute("name", name);
+			return "myRecruitResult_pass.jsp";
+		}
+		if(a.getAStatus() == 4) {
+			request.setAttribute("name", name);
+			return "myRecruitResult_fail.jsp";
+		}
+		// 김영빈 추가
+		
 		return "newRecruitBoard.jsp";
 	}
 

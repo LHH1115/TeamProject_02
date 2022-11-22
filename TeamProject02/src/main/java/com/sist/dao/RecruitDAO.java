@@ -28,6 +28,77 @@ public class RecruitDAO {
 	private RecruitDAO() {
 		
 	}
+	public int updateFile(AFileVO f) {
+		int re = -1;
+		String sql = "delete from afile where ano = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);	
+			pstmt.setInt(1, f.getANo());				
+			re = pstmt.executeUpdate();	
+			
+		}catch(Exception e){
+			System.out.println("submitResume exception occurred!!:"+e.getMessage());
+		}finally {			
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}
+		re = uploadResumeFile(f);
+		return re;
+		
+	}
+	public int deleteLink(int ano) {
+		int re = -1;
+		String sql = "delete from alink where ano = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);	
+			pstmt.setInt(1, ano);				
+			re = pstmt.executeUpdate();	
+			
+		}catch(Exception e){
+			System.out.println("submitResume exception occurred!!:"+e.getMessage());
+		}finally {			
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}
+		return re;
+		
+	}
+	
+	public int updateResume(int ano,ApplicantVO a) {
+		int re = -1;
+		String sql = "update applicantnew set aname = ?, aphone = ?, aemail = ? where ano = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, a.getAName());
+			pstmt.setString(2, a.getAPhone());
+			pstmt.setString(3, a.getAEmail());			
+			pstmt.setInt(4, ano);				
+			re = pstmt.executeUpdate();	
+			
+		}catch(Exception e){
+			System.out.println("submitResume exception occurred!!:"+e.getMessage());
+		}finally {			
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}			
+		return re;
+	}
+	
 	
 	public int submitResume(ApplicantVO a) {
 		int re = -1;
@@ -213,11 +284,6 @@ public class RecruitDAO {
 		return f;
 	}
 	
-	public int UpdateResume() {
-		int re = -1;
-		
-		return re;
-	}
 	
 	public int setSchedule() {
 		int re = -1;
