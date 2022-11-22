@@ -56,11 +56,7 @@ public class getMyResume extends HttpServlet {
 		String fileJson = gson.toJson(file);
 		//str = str.substring(0, str.length() - 1);
 		
-
-		System.out.println(appJson);
-		System.out.println(linksJson);
 		System.out.println(fileJson);
-		(JsonObject)(appJson);
 		
 		JsonObject jsonObject = new JsonObject();
 		
