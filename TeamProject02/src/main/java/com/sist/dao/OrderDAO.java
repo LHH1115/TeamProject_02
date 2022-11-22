@@ -63,6 +63,27 @@ public class OrderDAO {
 	}
 	//기존문의
 	
+	public int insertFile(OrderVO o) {
+		int re = -1;
+		String sql = "insert into cFile(fileNo, cNo, filePath) values(seq_cfile.nextval, ?,?)";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, o.getCNo());
+			pstmt.setString(2, o.getFilePath());		
+			re = pstmt.executeUpdate();			
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}finally {			
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}	
+		return re;
+	}
 	public int insertAddInfo(OrderVO o) {
 		int re = -1;
 		String sql = "insert into cAddInfo(addInfoNo, cNo, content) values(seq_addInfo.nextval, ?,?)";

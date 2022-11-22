@@ -185,7 +185,7 @@ footer a:hover{
     </nav>
 <!-- 메뉴바 -->	
 	
-<form id="f" style="margin:100px 100px 100px 100px;" method="post" action="oldOrderOK.do">
+<form id="f" style="margin:100px 100px 100px 100px;" method="post" action="oldOrderOK.do" enctype="multipart/form-data">
 	
 	<h1 id="cName">${cName } 진행상황</h1>
 	<img src="oldOrderImages/kakao.png" style="width:800px; height:500px;" id="cPhoto"><br>
@@ -204,6 +204,7 @@ footer a:hover{
 	<div class="col-12">
 		<input type="submit" value="등록" class="btn btn-primary mb-3" style="background-color: #9400d3; border-color: #9400d3;">
 	</div>
+	파일 추가 : <input type="file" name="uploadFile">
 </form>	
 
 <!-- 하단바 -->
