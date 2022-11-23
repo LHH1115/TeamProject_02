@@ -13,9 +13,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$(document).on("click","#test",function(e){
+	$(document).on("click","#calendar",function(e){
 		//e.preventDefault();
-		$("#selected").val("");
 		window.open("/TeamProject02/calendar.jsp","selectport","width=470, height=500");
 	});
 });
