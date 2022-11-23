@@ -9,16 +9,15 @@
 </head>
 <body>
 	<c:if test="${re == 1 }">
-		추가요청사항 등록 완료.
 		<c:if test="${re2 == 1 }">
-			파일 등록 완료.
+			<c:redirect url="/mainPage.html?AddInfo=true"></c:redirect>
 		</c:if>
 		<c:if test="${re2 != 1 }">
-			파일 등록 실패.
+			<c:redirect url="/order/oldOrderLogin.jsp?AddInfo=false"></c:redirect>
 		</c:if>
 	</c:if>
 	<c:if test="${re !=1 }">
-		추가요청사항 등록 실패.
+		<c:redirect url="/order/oldOrderLogin.jsp?AddInfo=false"></c:redirect>
 	</c:if>
 	<hr>
 </body>

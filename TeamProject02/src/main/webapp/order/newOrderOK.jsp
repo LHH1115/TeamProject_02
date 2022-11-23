@@ -6,13 +6,17 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<script type="text/javascript">
+	
+</script>
 </head>
 <body>
 	<c:if test="${re == 1 }">
-		신규주문 등록 완료.
+		<c:redirect url="/mainPage.html?Order=true"></c:redirect>
 	</c:if>
 	<c:if test="${re !=1 }">
-		등록실패
+		<c:redirect url="/order/newOrder.jsp?Order=false"></c:redirect>
+		<!-- <c:redirect url="javascript:window.history.back();"></c:redirect> -->
 	</c:if>
 	<hr>
 </body>
