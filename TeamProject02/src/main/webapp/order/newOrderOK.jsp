@@ -11,9 +11,14 @@
 </script>
 </head>
 <body>
+	<c:if test="${re2 == -1 }">
+		<c:redirect url="/order/newOrder.jsp?cService=false"></c:redirect>
+	</c:if>
+	
 	<c:if test="${re == 1 }">
 		<c:redirect url="/mainPage.html?Order=true"></c:redirect>
 	</c:if>
+	
 	<c:if test="${re !=1 }">
 		<c:redirect url="/order/newOrder.jsp?Order=false"></c:redirect>
 		<!-- <c:redirect url="javascript:window.history.back();"></c:redirect> -->

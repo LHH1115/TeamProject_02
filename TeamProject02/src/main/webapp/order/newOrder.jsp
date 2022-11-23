@@ -49,9 +49,25 @@
             }
         }
 	}
+	function cServiceFailed() {
+		var queryString = document.location.search.replace('?','');
+        var parameters = queryString.split('&');
+        for (i=0; i<parameters.length; i++)
+        {
+            if (parameters[i].substring(0,9) == 'cService=')
+            {
+                if(parameters[i].replace('cService=','') == 'false')
+                {
+                    alert('제작구분오류');
+                    return;
+                }
+            }
+        }
+	}
 	
 	function onload() {
 		OrderFailed();
+		cServiceFailed();
 	}
 </script>
 </head>
