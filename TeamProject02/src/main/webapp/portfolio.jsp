@@ -8,8 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-  <link href="infobar.css" rel="stylesheet" type="text/css">
-<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="infobar.css" rel="stylesheet" type="text/css">
 
 <style type="text/css">
 .portfolioImages{
@@ -33,6 +32,7 @@
 	
 	
 </style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://kit.fontawesome.com/bb9544ccb9.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(function(){
