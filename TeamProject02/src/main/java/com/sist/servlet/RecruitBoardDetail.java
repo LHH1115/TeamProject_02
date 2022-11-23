@@ -9,23 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sist.dao.OrderDAO;
-import com.sist.dao.RecruitDAO;
-import com.sist.vo.ApplicantVO;
-import com.sist.vo.OrderVO;
-import com.sist.vo.ScheduleVO;
+import com.google.gson.Gson;
+import com.sist.dao.RecruitBoardDAO;
+import com.sist.vo.RecruitBoardVO;
 
 /**
- * Servlet implementation class DateTest
+ * Servlet implementation class RecruitBoardDetail
  */
-@WebServlet("/DateTest")
-public class DateTest extends HttpServlet {
+@WebServlet("/RecruitBoardDetail")
+public class RecruitBoardDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DateTest() {
+    public RecruitBoardDetail() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,23 +33,15 @@ public class DateTest extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String referer = (String)request.getHeader("REFERER");
-		RecruitDAO dao = RecruitDAO.getInstance();
-		String date = request.getParameter("finalDate");
-		int aNo = Integer.parseInt(request.getParameter("aNo"));
-		response.setContentType("text/plain");
-		ScheduleVO o = new ScheduleVO();
-		o.setAMeeting(date);
-		System.out.println("date: "+date);
-		o.setANo(aNo);
-		System.out.println("cNo: "+aNo);
-		int re = dao.insertMeeting(o);
-		if(re > 0) {
-			response.sendRedirect("/TeamProject02/recruit/myRecruitLogin.jsp?re=true");
-		}else {
-			System.out.println(re);
-			response.sendRedirect("/TeamProject02/recruit/myRecruitLogin.jsp?re=false");
-		}
+		int rbNo = Integer.parseInt(request.getParameter("rbNo"));;
+		RecruitBoardDAO dao = RecruitBoardDAO.getInstance();
+		RecruitBoardVO r = dao.findByNo(rbNo);
+		Gson gson = new Gson();
+		String str = gson.toJson(r);
+		response.setContentType("application/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		out.print(str);
+		out.close();
 	}
 
 	/**
