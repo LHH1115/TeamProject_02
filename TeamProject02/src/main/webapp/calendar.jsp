@@ -9,9 +9,6 @@
 <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
 <style type="text/css">
-.test01 {
-    z-index: 9999 !important;
-}
 </style>
 <script type="text/javascript">
 	$(function() {
@@ -66,7 +63,7 @@
 	    });
 	    
 	    $("#f").submit(function(e){
-	    	
+	    	e.preventDefault();
 	    	var data =$(this).serializeArray();
 	    	$.ajax({
 	    		url:"/TeamProject02/DateTest",
@@ -85,14 +82,13 @@
 	});
 </script>
 </head>
-<body> 
-<div class="test01">
-	<form action="/TeamProject02/DateTest" id="f">
+<body>
+	<form action="" id="f">
 	<input type="text" class="datetimepicker" id="testDatepicker" name="date" autocomplete="off"><br>
+	aNo: <input type="text" name="aNo" value="<%=aNo%>" disabled="disabled"><br>
 	date: <input type="text" name="finalDate" id="date"><br>
 	<button id="btn_add">선택</button>
-	<input type="hidden" name="aNo" value="<%=aNo%>" id="aNo"><br>
 	</form>
-</div>	
+	
 </body>
 </html>

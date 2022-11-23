@@ -55,43 +55,13 @@ $(function(){
 	<button id="test">달력</button>
 
 </div>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#theModal">
-스케쥴 잡기
-</button>
-
-	<div class="modal fade" id="theModal" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header"></div>
-				<div class="modal-body">... remote content from "data-remote"
-					loads here ...</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
+
 <!-- 메인창 끝 -->
+
 <!-- 하단바 시작 -->
 	<jsp:include page="../menu_footer.jsp" flush="false"/>
 <!-- 하단바 끝 -->	
-<script>
-		$('#theModal').on('show.bs.modal', function(e) {
-			console.log("ok");
-			var button = $(e.relatedTarget);
-			var modal = $(this);
-			var jsp = "jsp";
-			$(this).find(".modal-body").load("/TeamProject02/calendar.jsp?aNo="+${no});
-			//modal.find($('.modal-body')).load(button.data("remote"));
-	
-		});
-</script>
-
-
-
-
-
 
 </body>
 </html>

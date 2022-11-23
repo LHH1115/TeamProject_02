@@ -35,7 +35,6 @@ public class DateTest extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String referer = (String)request.getHeader("REFERER");
 		RecruitDAO dao = RecruitDAO.getInstance();
 		String date = request.getParameter("finalDate");
 		int aNo = Integer.parseInt(request.getParameter("aNo"));
@@ -46,12 +45,9 @@ public class DateTest extends HttpServlet {
 		o.setANo(aNo);
 		System.out.println("cNo: "+aNo);
 		int re = dao.insertMeeting(o);
-		if(re > 0) {
-			response.sendRedirect("/TeamProject02/recruit/myRecruitLogin.jsp?re=true");
-		}else {
-			System.out.println(re);
-			response.sendRedirect("/TeamProject02/recruit/myRecruitLogin.jsp?re=false");
-		}
+		PrintWriter out = response.getWriter();
+		out.print(re);
+		out.close();
 	}
 
 	/**
