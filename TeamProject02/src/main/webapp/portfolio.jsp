@@ -22,15 +22,30 @@
 <script type="text/javascript">
 	$(function(){
 		var totalIMG=10;
+		var linkData =[
+				'https://www.coovil.net/project_iqforex/',
+				'https://www.coovil.net/project_safewifi/',
+				'https://www.coovil.net/project_pitta/',
+				'https://www.coovil.net/project_watchair/',
+				'https://www.coovil.net/project_coolmeet/',
+				'https://www.coovil.net/project_tagmarket/',
+				'https://www.coovil.net/project_fishingtag/',
+				'ttps://www.coovil.net/project_tomato/',
+				'https://www.coovil.net/project_ezsync/',
+				'https://www.coovil.net/project_coovil/'
+		]
+			
 		for(i=1;i<=totalIMG;i++){
 			var no = i;
+			var data = linkData[i-1];
 			if(i<10){
 				no = "0"+i;
 			}
-			var src = "portfolioImages/IMG"+no+".jpg";
+			var src = "order/portfolioImages/IMG"+no+".jpg";
 			var name = "IMG"+no+"jpg";
 			var div = $("<div></div>").addClass("imgDIV");
-			var a = $("<a href='#'></a>").attr("id","IMGlink");
+			var a = $("<a href='"+data+"'></a>").attr("id","IMGlink");
+			//var a = $("<a href='#'></a>").attr("id","IMGlink");
 			var img = $("<img/>").attr({
 				src:src,
 				name:name,
