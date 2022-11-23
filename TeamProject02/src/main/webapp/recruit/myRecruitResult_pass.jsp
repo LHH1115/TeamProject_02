@@ -29,7 +29,7 @@ menu
 <!-- 메인창 시작  -->
 <div class="container">
 	<div class="text center">
-		<img src="/TeamProject02/images/grape.png" width="100%" height="180px;">
+		<img src="/TeamProject02/image/grape.png" width="100%" height="180px;">
 	</div>
 	<br>
 	<br>
