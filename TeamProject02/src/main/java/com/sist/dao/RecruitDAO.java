@@ -13,6 +13,7 @@ import com.sist.vo.AFileVO;
 import com.sist.vo.ALinkVO;
 import com.sist.vo.ApplicantVO;
 import com.sist.vo.RecruitVO;
+import com.sist.vo.ScheduleVO;
 
 public class RecruitDAO {
 	
@@ -84,10 +85,10 @@ public class RecruitDAO {
 			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, a.getaName());
-			pstmt.setString(2, a.getaPhone());
-			pstmt.setString(3, a.getaEmail());			
-			pstmt.setInt(4, ano);			
+			pstmt.setString(1, a.getAName());
+			pstmt.setString(2, a.getAPhone());
+			pstmt.setString(3, a.getAEmail());			
+			pstmt.setInt(4, ano);				
 			re = pstmt.executeUpdate();	
 			
 		}catch(Exception e){
@@ -112,12 +113,12 @@ public class RecruitDAO {
 			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, a.getaName());
-			pstmt.setString(2, a.getaPhone());
-			pstmt.setString(3, a.getaEmail());			
-			pstmt.setString(4, a.getaResumePath());			
-			pstmt.setInt(5, a.getaWork());			
-			pstmt.setInt(6, a.getaStatus());			
+			pstmt.setString(1, a.getAName());
+			pstmt.setString(2, a.getAPhone());
+			pstmt.setString(3, a.getAEmail());			
+			pstmt.setString(4, a.getATitle());			
+			pstmt.setInt(5, a.getAWork());			
+			pstmt.setInt(6, a.getAStatus());			
 			re = pstmt.executeUpdate();	
 			
 		}catch(Exception e){
@@ -165,7 +166,7 @@ public class RecruitDAO {
 			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, l.getaNO());
+			pstmt.setInt(1, l.getANO());
 			pstmt.setString(2, l.getLinks());
 			
 			re = pstmt.executeUpdate();	
@@ -204,12 +205,13 @@ public class RecruitDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				a = new ApplicantVO();
-				a.setaNo(rs.getInt("ano"));
-				a.setaName(rs.getString("aname"));
-				a.setaPhone(rs.getString("aphone"));
-				a.setaEmail(rs.getString("aemail"));
-				a.setaWork(rs.getInt("awork"));
-				a.setaStatus(rs.getInt("astatus"));
+				a.setANo(rs.getInt("ano"));
+				a.setAName(rs.getString("aname"));
+				a.setAPhone(rs.getString("aphone"));
+				a.setAEmail(rs.getString("aemail"));
+				a.setAWork(rs.getInt("awork"));
+				a.setAStatus(rs.getInt("astatus"));
+				a.setATitle(rs.getString("aresumepath"));
 			}
 		}catch(Exception e) {
 			System.out.println("findMyResume exception occurred!!:"+e.getMessage());
@@ -239,7 +241,7 @@ public class RecruitDAO {
 			while(rs.next()) {
 				l = new ALinkVO();
 				l.setAlinkNO(rs.getInt("alinkno"));
-				l.setaNO(rs.getInt("ano"));
+				l.setANO(rs.getInt("ano"));
 				l.setLinks(rs.getString("links"));
 				list.add(l);
 			}
@@ -285,9 +287,25 @@ public class RecruitDAO {
 	}
 	
 	
-	public int setSchedule() {
+	public int insertMeeting(ScheduleVO b) {
 		int re = -1;
-		
+		String sql = "insert into ApplicantOrigin(aMeeting,ano,alevel) values((to_date(?,'yyyy-mm-dd HH24:MI')),?,1 )";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, b.getAMeeting());
+			pstmt.setInt(2, b.getANo());
+			re = pstmt.executeUpdate();			
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}finally {			
+			if(pstmt != null) { try{pstmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}	
 		return re;
 	}
 	

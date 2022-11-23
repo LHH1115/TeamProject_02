@@ -44,7 +44,7 @@ public class getMyResume extends HttpServlet {
 		
 		RecruitDAO dao = RecruitDAO.getInstance();
 		ApplicantVO app = dao.findMyResume(name, type, info);
-		int cno = app.getaNo();
+		int cno = app.getANo();
 		ArrayList<ALinkVO> links = dao.findMyLinks(cno);
 		AFileVO file = dao.findMyfile(cno);
 		

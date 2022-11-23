@@ -14,14 +14,14 @@ import com.sist.dao.RecruitDAO;
 import com.sist.vo.AFileVO;
 import com.sist.vo.ALinkVO;
 import com.sist.vo.ApplicantVO;
-import com.sist.vo.testVO;
+
 
 public class SubmitResumeOKAction implements CompanyAction {
 
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		String path = request.getRealPath("upload");
+		String path = request.getRealPath("/recruit/upload");
 		//System.out.print(path);
 		MultipartRequest multi = new MultipartRequest(
 				request,
@@ -44,22 +44,24 @@ public class SubmitResumeOKAction implements CompanyAction {
 		String phone = multi.getParameter("aphone");
 		String email = multi.getParameter("aemail");
 		int work = Integer.parseInt(multi.getParameter("awork"));
+		String title = multi.getParameter("atitle");
 		
 		RecruitDAO dao = RecruitDAO.getInstance();
 		
 		ApplicantVO a = new ApplicantVO();
 		
-		a.setaName(name);
-		a.setaPhone(phone);
-		a.setaEmail(email);
-		a.setaWork(work);
-		a.setaStatus(0);
+		a.setAName(name);
+		a.setAPhone(phone);
+		a.setAEmail(email);
+		a.setAWork(work);
+		a.setAStatus(0);
+		a.setATitle(title);
 		
 		int re1 = dao.submitResume(a);
 		
 		ApplicantVO afn = dao.findMyResume(name, 1, phone);
 		
-		int ano = afn.getaNo();
+		int ano = afn.getANo();
 		
 		
 		AFileVO f = new AFileVO();
@@ -76,7 +78,7 @@ public class SubmitResumeOKAction implements CompanyAction {
 			
 			for (int i = 0; i < arr.length; i++) {
 				ALinkVO l = new ALinkVO();
-				l.setaNO(ano);
+				l.setANO(ano);
 				l.setLinks(arr[i]);
 				re3 += dao.uploadLink(l);
 	        }
@@ -87,7 +89,7 @@ public class SubmitResumeOKAction implements CompanyAction {
 		
 		
 	
-		return "newRecruitInput.jsp";
+		return "newRecruitBoard.jsp";
 	}
 
 }

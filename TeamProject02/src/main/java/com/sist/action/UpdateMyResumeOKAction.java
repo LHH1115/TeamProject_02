@@ -19,7 +19,7 @@ public class UpdateMyResumeOKAction implements CompanyAction{
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		String path = request.getRealPath("upload");
+		String path = request.getRealPath("/recruit/upload");
 		//System.out.print(path);
 		MultipartRequest multi = new MultipartRequest(
 				request,
@@ -50,15 +50,15 @@ public class UpdateMyResumeOKAction implements CompanyAction{
 		
 		ApplicantVO a = new ApplicantVO();
 		
-		a.setaName(name);
-		a.setaPhone(phone);
-		a.setaEmail(email);
+		a.setAName(name);
+		a.setAPhone(phone);
+		a.setAEmail(email);
 		
 		
 		
 		ApplicantVO afn = dao.findMyResume(markn, 1, markp);
 		
-		int ano = afn.getaNo();
+		int ano = afn.getANo();
 		
 		int re1 = dao.updateResume(ano,a);
 		
@@ -77,7 +77,7 @@ public class UpdateMyResumeOKAction implements CompanyAction{
 			
 			for (int i = 0; i < arr.length; i++) {
 				ALinkVO l = new ALinkVO();
-				l.setaNO(ano);
+				l.setANO(ano);
 				l.setLinks(arr[i]);
 				re3 += dao.uploadLink(l);
 	        }

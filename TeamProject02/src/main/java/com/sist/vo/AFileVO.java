@@ -7,7 +7,4 @@ public class AFileVO {
 	private int aFileNo;
 	private int aNo;
 	private String aFilepath;
-	
-	
-	
 }

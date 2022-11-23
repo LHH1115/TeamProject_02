@@ -85,7 +85,7 @@
 <body>
 	<form action="" id="f">
 	<input type="text" class="datetimepicker" id="testDatepicker" name="date" autocomplete="off"><br>
-	date: <input type="hidden" name="finalDate" id="date"><br>
+	date: <input type="text" name="finalDate" id="date"><br>
 	<button id="btn_add">선택</button>
 	<input type="hidden" name="aNo" value="<%=aNo%>" id="aNo"><br>
 	</form>

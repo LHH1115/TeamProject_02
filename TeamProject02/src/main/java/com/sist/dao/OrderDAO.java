@@ -35,7 +35,6 @@ public class OrderDAO {
 			rs = stmt.executeQuery(sql);
 			if(rs.next()) {
 				//vo 다 만들면 추가
-				o.getCname();
 			}
 		} catch (Exception e) {
 			System.out.println("Exception: "+e);
