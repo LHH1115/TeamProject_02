@@ -61,6 +61,10 @@
 	    	$("#f").trigger("submit");
 	    });
 	    
+	    $("#testDatepicker").click(function(e){
+	    	e.preventDefault();
+	    })
+	    
 	    $("#f").submit(function(e){
 	    	e.preventDefault();
 	    	var data =$(this).serializeArray();
@@ -81,7 +85,7 @@
 </head>
 <body>
 	<form action="" id="f">
-	<input type="text" class="datetimepicker" id="testDatepicker" name="date" autocomplete="off"><br>
+	<button class="datetimepicker" id="testDatepicker" name="date"></button><br>
 	cNo: <input type="text" name="cNo"><br>
 	date: <input type="text" name="finalDate" id="date"><br>
 	<button id="btn_add">선택</button>
