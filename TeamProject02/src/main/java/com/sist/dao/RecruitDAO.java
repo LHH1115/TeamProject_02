@@ -38,7 +38,7 @@ public class RecruitDAO {
 			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);	
-			pstmt.setInt(1, f.getaNo());				
+			pstmt.setInt(1, f.getANo());				
 			re = pstmt.executeUpdate();	
 			
 		}catch(Exception e){
@@ -87,7 +87,7 @@ public class RecruitDAO {
 			pstmt.setString(1, a.getaName());
 			pstmt.setString(2, a.getaPhone());
 			pstmt.setString(3, a.getaEmail());			
-			pstmt.setInt(4, ano);				
+			pstmt.setInt(4, ano);			
 			re = pstmt.executeUpdate();	
 			
 		}catch(Exception e){
@@ -140,8 +140,8 @@ public class RecruitDAO {
 			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, f.getaNo());
-			pstmt.setString(2, f.getaFilepath());
+			pstmt.setInt(1, f.getANo());
+			pstmt.setString(2, f.getAFilepath());
 	
 			re = pstmt.executeUpdate();	
 			
@@ -270,9 +270,9 @@ public class RecruitDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				f = new AFileVO();
-				f.setaFileNo(rs.getInt("afileno"));
-				f.setaNo(rs.getInt("ano"));
-				f.setaFilepath(rs.getString("afilepath"));
+				f.setAFileNo(rs.getInt("afileno"));
+				f.setANo(rs.getInt("ano"));
+				f.setAFilepath(rs.getString("afilepath"));
 			}
 		}catch(Exception e) {
 			System.out.println("findMyfile exception occurred!!:"+e.getMessage());

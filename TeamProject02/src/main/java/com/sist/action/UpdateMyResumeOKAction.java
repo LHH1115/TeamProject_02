@@ -63,8 +63,8 @@ public class UpdateMyResumeOKAction implements CompanyAction{
 		int re1 = dao.updateResume(ano,a);
 		
 		AFileVO f = new AFileVO();
-		f.setaNo(ano);
-		f.setaFilepath(fname);
+		f.setANo(ano);
+		f.setAFilepath(fname);
 		
 		int re2 = dao.updateFile(f);
 		

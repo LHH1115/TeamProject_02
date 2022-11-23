@@ -63,8 +63,8 @@ public class SubmitResumeOKAction implements CompanyAction {
 		
 		
 		AFileVO f = new AFileVO();
-		f.setaNo(ano);
-		f.setaFilepath(fname);
+		f.setANo(ano);
+		f.setAFilepath(fname);
 		
 		int re2 = dao.uploadResumeFile(f);
 		
