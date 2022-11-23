@@ -14,7 +14,7 @@ public class NewOrderOKAction implements CompanyAction {
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int cService = Integer.parseInt(request.getParameter("cService"));
-		System.out.println(cService);
+		//System.out.println(cService);
 		if(cService == 8) {
 			//System.out.println("제작구분오류");
 			//return "newOrder.jsp?cService=false";
@@ -22,7 +22,7 @@ public class NewOrderOKAction implements CompanyAction {
 			request.setAttribute("re2", re2);
 			return "newOrderOK.jsp";
 		}else {
-			System.out.println("else 작동");
+			//System.out.println("else 작동");
 		OrderVO o = new OrderVO();
 		o.setCName(request.getParameter("cName"));
 		o.setCPhone(request.getParameter("cPhone"));

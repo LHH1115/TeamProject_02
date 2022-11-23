@@ -26,7 +26,7 @@
 			$("#addrSelected").val("");
 			new daum.Postcode({
 		        oncomplete: function(data) {
-		        	console.log("검색완료"+data.address);
+		        	//console.log("검색완료"+data.address);
 		            $("#f").find("#addrSelected").val(data.address);
 		        }
 		    }).open();
@@ -58,7 +58,7 @@
             {
                 if(parameters[i].replace('cService=','') == 'false')
                 {
-                    alert('제작구분오류');
+                    alert('올바른 제작구분을 선택해주세요');
                     return;
                 }
             }
