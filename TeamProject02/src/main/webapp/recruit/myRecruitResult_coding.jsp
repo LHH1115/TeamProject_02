@@ -5,15 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-
-</style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="../infobar.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script> 
-<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://kit.fontawesome.com/bb9544ccb9.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(function(){
 	$(document).on("click","#test",function(e){
@@ -27,17 +23,17 @@ $(function(){
 </script>
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- 메뉴바 시작 -->
+ <jsp:include page="../menu_header.jsp" flush="false"/>
+<!-- 메뉴바 끝 -->	
 
-<!-- 메뉴창 시작  -->
-<hr>
-menu
-<hr>
-<!-- 메뉴창 끝  -->
 
 <!-- 메인창 시작  -->
+<div style="margin:100px 100px 100px 100px;">
 <div class="container">
 	<div class="text center">
-		<img src="/TeamProject02/images/grape.png" width="100%" height="180px;">
+		<img src="/TeamProject02/image/grape.png" width="100%" height="180px;">
 	</div>
 	<br>
 	<br>
@@ -59,7 +55,6 @@ menu
 	<button id="test">달력</button>
 
 </div>
-
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#theModal">
 스케쥴 잡기
 </button>
@@ -76,6 +71,11 @@ menu
 			</div>
 		</div>
 	</div>
+</div>
+<!-- 메인창 끝 -->
+<!-- 하단바 시작 -->
+	<jsp:include page="../menu_footer.jsp" flush="false"/>
+<!-- 하단바 끝 -->	
 <script>
 		$('#theModal').on('show.bs.modal', function(e) {
 			console.log("ok");
@@ -90,10 +90,8 @@ menu
 
 
 
-<!-- 메인창 끝  -->
-		
-<!-- 하단창 시작  -->
-<!-- 하단창 끝  -->
+
+
 
 </body>
 </html>
