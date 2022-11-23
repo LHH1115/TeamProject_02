@@ -30,7 +30,7 @@
 <body>
 	<h1>나의 채용 확인하기</h1>
 	<div class="insert" id="loginArea">
-		<form action="LoginCheck.do">
+		<form action="LoginCheck.do" method="post">
 			<div class="form-group">
 				<label for="aname">이름</label>
 				<input type="text" id="aname" name="aname" class="form-control"><br>

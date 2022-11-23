@@ -33,15 +33,16 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 			return "myReruitUpdate.jsp";
 		}
 		 
-		// 김영빈 추가
 		if(a.getAStatus() == 1) {
 			request.setAttribute("name", name);
-			request.setAttribute("title", a.getATitle());			
+			request.setAttribute("title", a.getATitle());	
+			request.setAttribute("no", a.getANo());
 			return "myRecruitResult_document.jsp";
 		}
 		if(a.getAStatus() == 2) {
 			request.setAttribute("name", name);
-			request.setAttribute("title", a.getATitle());	
+			request.setAttribute("title", a.getATitle());
+			request.setAttribute("no", a.getANo());
 			return "myRecruitResult_coding.jsp";
 		}
 		if(a.getAStatus() == 3) {
@@ -54,8 +55,7 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 			request.setAttribute("title", a.getATitle());	
 			return "myRecruitResult_fail.jsp";
 		}
-		// 김영빈 추가
-		
+
 		return "newRecruitBoard.jsp";
 	}
 

@@ -13,13 +13,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$(document).on("click","#test",function(e){
-		//e.preventDefault();
-		$("#selected").val("");
-		window.open("/TeamProject02/calendar.jsp","selectport","width=470, height=500");
-	});
-	
-
 	
 });
 	
@@ -55,8 +48,6 @@ menu
 		<p>필요한 서류나 기타사항은 따로 메일로 보내드리겠습니다.</p>
 	</div>
 	
-	<button id="test">달력</button>
-
 </div>
 
 

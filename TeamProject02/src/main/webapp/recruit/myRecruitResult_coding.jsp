@@ -16,13 +16,9 @@ $(function(){
 	$(document).on("click","#test",function(e){
 		//e.preventDefault();
 		$("#selected").val("");
-		window.open("/TeamProject02/calendar.jsp","selectport","width=470, height=500");
+		window.open('/TeamProject02/calendar.jsp?aNo='+${no}+'',"selectport","width=470, height=500");
 	});
-	
-	$.ajax({
-		
-	});
-	
+
 });
 	
 </script>
