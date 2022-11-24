@@ -14,7 +14,7 @@
 	$("#login").submit(function(e){
 		e.preventDefault();
 	})
-
+ 
 function meetingSuccess() {
 	var queryString = document.location.search.replace('?','');
     var parameters = queryString.split('&');
@@ -49,6 +49,19 @@ function meetingFailed() {
 function onload(){
 	meetingSuccess();
 	meetingFailed();
+	
+	$(function(){
+		$(".radio").click(function(){
+			var radio = $(this).val();
+			
+			if(radio == 1){
+				$("#info").attr("placeholder","전화번호를 입력해주세요.");
+			}else{
+				$("#info").attr("placeholder","이메일을 입력해주세요.");
+			}
+
+		});
+	});
 }
 </script>
 </head>
@@ -68,18 +81,18 @@ function onload(){
 		<form action="LoginCheck.do" method="post">
 			<div class="form-group">
 				<label for="aname">이름</label>
-				<input type="text" id="aname" name="aname" class="form-control"><br>
+				<input type="text" id="aname" name="aname" class="form-control" placeholder="이름을 입력해주세요." required="required"><br>
 			</div>
 			<div class="form-group">
 				<div class="radio_div">
-				  <input type="radio" id="radio_email" name="radio" value="0" checked>
+				  <input type="radio" id="radio_email" name="radio" value="0" class="radio">
 				  <label class="custom-control-label" for="customRadioInline1">이메일</label>
 				</div>
 				<div class="radio_div">
-				  <input type="radio" id="radio_phone" name="radio" value="1">
+				  <input type="radio" id="radio_phone" name="radio" value="1" class="radio" checked>
 				  <label class="custom-control-label" for="customRadioInline2">전화번호</label>
 				</div>
-				<input type="text" id="info" name="info" class="form-control"><br>
+				<input type="text" id="info" name="info" class="form-control" placeholder="전화번호를 입력해주세요." required="required"><br>
 				
 				<input type="submit" class="btn btn-dark" value="로그인" style="background-color: #9400d3">
 			</div>

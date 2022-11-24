@@ -88,9 +88,9 @@
 <body> 
 <div class="test01">
 	<form action="/TeamProject02/DateTest" id="f">
-	<input type="text" class="datetimepicker" id="testDatepicker" name="date" autocomplete="off"><br>
-	date: <input type="text" name="finalDate" id="date"><br>
-	<button id="btn_add">선택</button>
+	<input type="button" class="datetimepicker" id="testDatepicker" name="date" autocomplete="off" value="날짜조희"><br><br>
+	Date: <input type="text" name="finalDate" id="date" style="border:0 solid black"><br><br>
+	<button class="btn btn-primary" id="btn_add" style="background-color: #9400d3; border-color: #9400d3;">스케줄 선택하기</button>
 	<input type="hidden" name="aNo" value="<%=aNo%>" id="aNo"><br>
 	</form>
 </div>	

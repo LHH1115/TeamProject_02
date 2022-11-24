@@ -1,6 +1,7 @@
 package com.sist.action;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("작동");
 		String name = request.getParameter("aname");
 		int type = Integer.parseInt(request.getParameter("radio"));
 		String info = request.getParameter("info");
@@ -24,6 +25,15 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 		
 
 		if(a == null) {
+			
+			/*
+			 * try { String var = "지원서를 넣은 사용자가 아닙니다.";
+			 * response.setContentType("text/html; charset=utf-8"); PrintWriter w =
+			 * response.getWriter(); w.write("<script>alert('"+var+
+			 * "');location.href='myRecruitLogin.jsp';</script>"); w.flush(); w.close();
+			 * }catch(Exception e) { e.printStackTrace(); }
+			 */
+			
 			return "loginInfoNone.jsp";
 		}
 		if(a.getAStatus() == 0) {

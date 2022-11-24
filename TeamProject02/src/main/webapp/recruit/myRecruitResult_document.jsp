@@ -35,15 +35,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script> 
 <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
  -->
-<script type="text/javascript">
-$(function(){
-	$(document).on("click","#calendar",function(e){
-		//e.preventDefault();
-		window.open('/TeamProject02/calendar.jsp?aNo='+${no}+'',"selectport","width=470, height=500");
-	});
-});
-	
-</script>
+
 </head>
 <body>
 
@@ -54,7 +46,7 @@ $(function(){
 <div style="margin:100px 100px 100px 100px;">
 <div class="container">
 	<div class="text center">
-		<img src="/TeamProject02/images/grape.png" width="100%" height="180px;">
+		<img src="/TeamProject02/image/grape.png" width="100%" height="180px;">
 	</div>
 	<br>
 	<br>
@@ -75,13 +67,12 @@ $(function(){
 			아래에서 코딩테스트 가능한 날짜와 시간을 선택해주시길 바랍니다.</p>
 	</div>
 	
-	<button id="calendar">달력</button>
-
-</div>
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#theModal">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#theModal" style="background-color: #9400d3; border-color: #9400d3;">
 스케쥴 잡기
 </button>
+</div>
+
+
 
 	<div class="modal fade" id="theModal" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
