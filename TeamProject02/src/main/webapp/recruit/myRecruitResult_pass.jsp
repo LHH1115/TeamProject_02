@@ -23,7 +23,7 @@ $(function(){
  <jsp:include page="../menu_header.jsp" flush="false"/>
 <!-- 메뉴바 끝 -->	
 
-
+ 
 <!-- 메인창 시작  -->
 <div style="margin:100px 100px 100px 100px;">
 <div class="container">

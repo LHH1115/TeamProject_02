@@ -25,7 +25,7 @@ public class RecruitBoardList extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public RecruitBoardList() {
-        super();
+        super(); 
         // TODO Auto-generated constructor stub
     }
 

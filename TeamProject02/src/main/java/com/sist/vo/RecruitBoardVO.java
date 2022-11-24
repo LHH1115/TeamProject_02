@@ -11,5 +11,5 @@ public class RecruitBoardVO {
 	public String rStartDate;
 	public String rEndDate;
 	public String rContent;
-	public int rWork;	
+	public int rWork;	 
 }

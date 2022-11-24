@@ -22,6 +22,6 @@ public class OldOrderDetialAction implements CompanyAction {
 		request.setAttribute("cName", cName);
 		request.setAttribute("cProgress", cProgress);
 		request.setAttribute("cNo", cNo);
-		return "oldOrderDetail.jsp";
+		return "oldOrderDetail.jsp"; 
 	}
 }

@@ -14,7 +14,7 @@
 	$( document ).ready( function() {
 	    $( '#level' ).removeClass( 'row g-3' );
 	   
-	  });
+	  }); 
 </script>
 </head>
 <body>

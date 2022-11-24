@@ -27,7 +27,7 @@ public class UpdateMyResumeOKAction implements CompanyAction{
 				1024*1024*100,
 				"utf-8",
 				new DefaultFileRenamePolicy()
-			);
+			); 
 		
 		File uploadFile =  multi.getFile("afile");
 		

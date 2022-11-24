@@ -19,5 +19,5 @@
 	<h1>지원서를 넣은 사용자가 아닙니다.</h1>
 	<button id="relogin">다시 로그인하기</button>
 	<button id="gotoBoard">채용공고게시판으로가기</button>
-</body>
+</body> 
 </html>

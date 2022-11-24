@@ -30,7 +30,7 @@ public class SubmitResumeOKAction implements CompanyAction {
 				"utf-8",
 				new DefaultFileRenamePolicy()
 			);
-		
+		 
 		File uploadFile =  multi.getFile("afile");
 		
 		String fname = "";

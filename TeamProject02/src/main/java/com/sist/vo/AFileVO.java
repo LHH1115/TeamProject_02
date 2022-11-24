@@ -6,5 +6,5 @@ import lombok.Data;
 public class AFileVO {
 	private int aFileNo;
 	private int aNo;
-	private String aFilepath;
+	private String aFilepath; 
 }

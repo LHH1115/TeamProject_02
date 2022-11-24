@@ -20,7 +20,7 @@
 		var day = ('0'+today.getDate()).slice(-2);
 		var todayDate = year+"/"+ month+"/"+day;
 		
-		// 채용게시판 가져오기
+		// 채용게시판 가져오기 
 		$.ajax({
 			url:"/TeamProject02/RecruitBoardList",
 			success:function(arr){	

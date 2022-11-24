@@ -21,7 +21,7 @@ public class RecruitBoardDAO {
 			}
 			return dao;
 		}
-		
+		 
 		private RecruitBoardDAO() {		
 		}	
 		

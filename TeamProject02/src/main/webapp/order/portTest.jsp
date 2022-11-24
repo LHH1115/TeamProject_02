@@ -13,7 +13,7 @@
 			$("#selected").val("");
 			window.open("newOrderPortfolio.jsp","selectport","width=470, height=500");
 		})
-		
+		 
 		$(document).on("click","#addr",function(){
 			$("#addrSelected").val("");
 			new daum.Postcode({

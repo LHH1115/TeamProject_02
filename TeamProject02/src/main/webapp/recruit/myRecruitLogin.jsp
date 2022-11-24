@@ -19,7 +19,7 @@ function meetingSuccess() {
 	var queryString = document.location.search.replace('?','');
     var parameters = queryString.split('&');
     for (i=0; i<parameters.length; i++)
-    {
+    { 
         if (parameters[i].substring(0,3) == 're=')
         {
             if(parameters[i].replace('re=','') == 'true')

@@ -19,7 +19,7 @@
 		float: left;
 		margin-left: 10px;
 		margin-bottom: 10px;
-	}
+	} 
 	
 	.btn:hover{
 		color: white;

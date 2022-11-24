@@ -25,7 +25,7 @@ public class OldOrderLoginCheck extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public OldOrderLoginCheck() {
-        super();
+        super(); 
         // TODO Auto-generated constructor stub
     }
 

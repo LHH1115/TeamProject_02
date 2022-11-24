@@ -6,5 +6,5 @@ import lombok.Data;
 public class ScheduleVO {
 	private int aNo;                 
     private int aLevel;              
-    private String aMeeting;
+    private String aMeeting; 
 }

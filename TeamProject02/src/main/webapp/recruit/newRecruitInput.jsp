@@ -19,7 +19,7 @@
 			$('.mylink').last().remove(); 
 			$('.linkbr').last().remove();
 		});
-		
+		 
 
 		<% String aTitle = request.getParameter("rTitle");%>
 

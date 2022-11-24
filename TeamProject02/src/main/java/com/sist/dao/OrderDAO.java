@@ -22,7 +22,7 @@ public class OrderDAO {
 		}
 		return dao;
 	}
-	
+	 
 	private OrderDAO() {		
 	}	
 	

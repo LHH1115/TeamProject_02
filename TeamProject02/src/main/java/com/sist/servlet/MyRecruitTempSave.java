@@ -18,7 +18,7 @@ public class MyRecruitTempSave extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public MyRecruitTempSave() {
-        super();
+        super(); 
         // TODO Auto-generated constructor stub
     }
 

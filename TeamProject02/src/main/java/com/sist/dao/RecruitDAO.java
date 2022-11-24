@@ -12,7 +12,6 @@ import javax.sql.DataSource;
 import com.sist.vo.AFileVO;
 import com.sist.vo.ALinkVO;
 import com.sist.vo.ApplicantVO;
-import com.sist.vo.RecruitVO;
 import com.sist.vo.ScheduleVO;
 
 public class RecruitDAO {
@@ -27,7 +26,7 @@ public class RecruitDAO {
 	}
 	
 	private RecruitDAO() {
-		
+		 
 	}
 	public int updateFile(AFileVO f) {
 		int re = -1;

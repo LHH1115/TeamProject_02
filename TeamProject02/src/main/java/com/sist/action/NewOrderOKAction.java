@@ -18,7 +18,7 @@ public class NewOrderOKAction implements CompanyAction {
 		if(cService == 8) {
 			//System.out.println("제작구분오류");
 			//return "newOrder.jsp?cService=false";
-			int re2 = -1;
+			int re2 = -1; 
 			request.setAttribute("re2", re2);
 			return "newOrderOK.jsp";
 		}else {

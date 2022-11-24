@@ -18,7 +18,7 @@ public class GetAddress extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public GetAddress() {
-        super();
+        super(); 
         // TODO Auto-generated constructor stub
     }
 

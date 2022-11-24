@@ -25,7 +25,7 @@
 			$('.mylink').last().remove(); 
 			$('.linkbr').last().remove(); 
 		});
-		
+		 
 		$.ajax({
 			url:"/TeamProject02/getMyResume",
 			data:{"name":"${name}","type":${type},"info":"${info}"},

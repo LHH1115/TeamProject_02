@@ -15,7 +15,7 @@
 		
 		<% int rbNo =  Integer.parseInt(request.getParameter("rbNo")); %>
 		
-		$.ajax({
+		$.ajax({ 
 			url:"/TeamProject02/RecruitBoardDetail",
 			data:{"rbNo":<%=rbNo%>},
 			success:function(arr){

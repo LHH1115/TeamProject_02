@@ -9,3 +9,4 @@ import javax.servlet.http.HttpServletResponse;
 public interface CompanyAction {
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 }
+ 

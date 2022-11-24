@@ -15,7 +15,7 @@
 		<c:if test="${re2 != 1 }">
 			<c:redirect url="/order/oldOrderLogin.jsp?AddInfo=false"></c:redirect>
 		</c:if>
-	</c:if>
+	</c:if> 
 	<c:if test="${re !=1 }">
 		<c:redirect url="/order/oldOrderLogin.jsp?AddInfo=false"></c:redirect>
 	</c:if>

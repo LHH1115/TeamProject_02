@@ -21,6 +21,6 @@ public class OrderVO {
 	private int fileNo;
 	private String filePath;
 	private int addInfoNo;
-	private String content;
+	private String content; 
 }
 

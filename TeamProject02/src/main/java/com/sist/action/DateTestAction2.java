@@ -6,12 +6,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class BringMyResumeAction implements CompanyAction {
+public class DateTestAction2 implements CompanyAction {
 
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return null;
-	}
+		String finalDate = request.getParameter("finalDate");
+		int aNo = Integer.parseInt(request.getParameter("aNo"));
+		String data = "DateTest?finalDate="+finalDate+"&aNo="+aNo;
+		return data;
+	} 
 
 }

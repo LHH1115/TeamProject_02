@@ -35,7 +35,7 @@ public class Controller extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		
+		 
 		map = new HashMap<String, CompanyAction>();
 		
 		String path = config.getServletContext().getRealPath("WEB-INF");

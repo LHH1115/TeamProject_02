@@ -18,7 +18,7 @@ public class MyRecruitLoginCheck extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public MyRecruitLoginCheck() {
-        super();
+        super(); 
         // TODO Auto-generated constructor stub
     }
 

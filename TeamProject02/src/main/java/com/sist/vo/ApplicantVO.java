@@ -10,6 +10,6 @@ public class ApplicantVO {
 	private String aEmail;
 	private String aTitle;
 	private int aWork;
-	private int aStatus;
+	private int aStatus; 
 	
 }

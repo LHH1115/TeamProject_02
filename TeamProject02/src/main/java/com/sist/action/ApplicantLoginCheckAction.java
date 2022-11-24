@@ -21,7 +21,7 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 		
 		RecruitDAO dao = RecruitDAO.getInstance();
 		ApplicantVO a = dao.findMyResume(name, type, info);
-		
+		 
 
 		if(a == null) {
 			return "loginInfoNone.jsp";
