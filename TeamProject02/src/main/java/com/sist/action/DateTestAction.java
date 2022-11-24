@@ -14,7 +14,7 @@ public class DateTestAction implements CompanyAction {
 		String finalDate = request.getParameter("finalDate");
 		int aNo = Integer.parseInt(request.getParameter("aNo"));
 		
-		return "DateTest?finalDate="+finalDate+"&aNo="+aNo;
-	}
+		return "DateTest?finalDate="+finalDate+"&aNo="+aNo; 
+	} 
 
 }

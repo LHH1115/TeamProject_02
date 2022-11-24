@@ -65,7 +65,7 @@ public class OrderDAO {
 	public int insertOrigin() {
 		int re = -1;
 		
-		String sql = "insert into customerorigin(cno, cProgress) values( (select MAX(cNo)+1 from customerOrigin),0 )";
+		String sql = "insert into customerorigin(cno, cProgress) values( (select MAX(cNo)+1 from customerorigin),0 )";
 		Connection conn = null;
 		Statement stmt = null;
 		try {

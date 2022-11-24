@@ -35,8 +35,8 @@ public class NewOrderOKAction implements CompanyAction {
 		o.setCInfo(request.getParameter("cInfo"));
 		
 		OrderDAO dao = OrderDAO.getInstance();
-		int origin = dao.insertOrigin();
 		int re = dao.insertNewOrder(o);
+		int origin = dao.insertOrigin();
 		request.setAttribute("re", re);
 		request.setAttribute("origin", origin);
 		return "newOrderOK.jsp";	
