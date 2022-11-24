@@ -10,8 +10,49 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://kit.fontawesome.com/bb9544ccb9.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$("#login").submit(function(e){
+		e.preventDefault();
+	})
+
+function meetingSuccess() {
+	var queryString = document.location.search.replace('?','');
+    var parameters = queryString.split('&');
+    for (i=0; i<parameters.length; i++)
+    {
+        if (parameters[i].substring(0,3) == 're=')
+        {
+            if(parameters[i].replace('re=','') == 'true')
+            {
+                alert('일정 선택이 완료되었습니다.');
+                return;
+            }
+        }
+    }
+}
+function meetingFailed() {
+	var queryString = document.location.search.replace('?','');
+    var parameters = queryString.split('&');
+    for (i=0; i<parameters.length; i++)
+    {
+        if (parameters[i].substring(0,3) == 're=')
+        {
+            if(parameters[i].replace('re=','') == 'false')
+            {
+                alert('일정을 다시 선택해주세요.');
+                return;
+            }
+        }
+    }
+}
+
+function onload(){
+	meetingSuccess();
+	meetingFailed();
+}
+</script>
 </head>
-<body>
+<body onload="onload()">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <!-- 메뉴바 시작 -->
  <jsp:include page="../menu_header.jsp" flush="false"/>
