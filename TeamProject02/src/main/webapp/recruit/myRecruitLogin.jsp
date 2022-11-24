@@ -14,7 +14,7 @@
 	$("#login").submit(function(e){
 		e.preventDefault();
 	})
-
+ 
 function meetingSuccess() {
 	var queryString = document.location.search.replace('?','');
     var parameters = queryString.split('&');
