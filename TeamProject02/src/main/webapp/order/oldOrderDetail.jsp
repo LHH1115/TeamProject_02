@@ -39,7 +39,7 @@
 	<div id="text">
 	</div>
 	
-	<label class="form-label"">진행도</label><br>
+	<label class="form-label">진행도</label><br>
 	<div class="progress" style="height:30px;">
 	  <div class="progress-bar" role="progressbar" aria-label="Example with label" style="height:30px; width: ${cProgress }%; background-color: #9400d3; border-color: #9400d3;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${cProgress }%</div>
 	</div>
