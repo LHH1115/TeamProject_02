@@ -19,8 +19,8 @@ public class UpdateMyResumeOKAction implements CompanyAction{
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		@SuppressWarnings("deprecation")
 		String path = request.getRealPath("/recruit/upload");
-		//System.out.print(path);
 		MultipartRequest multi = new MultipartRequest(
 				request,
 				path,

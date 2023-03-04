@@ -10,7 +10,6 @@ public class NewOrderAction implements CompanyAction {
 
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		return "newOrder.jsp";
 	}
 

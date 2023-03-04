@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sist.dao.RecruitBoardDAO;
 import com.sist.dao.RecruitDAO;
 import com.sist.vo.ApplicantVO;
 

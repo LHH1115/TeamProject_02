@@ -1,7 +1,6 @@
 package com.sist.action;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +13,6 @@ public class OldOrderDetialAction implements CompanyAction {
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int cNo = Integer.parseInt(request.getParameter("cNo"));
-		//System.out.println(cNo);
 		OrderDAO dao = OrderDAO.getInstance();
 		OrderVO o = dao.findRequest(cNo);
 		String cName = o.getCName();
